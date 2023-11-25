@@ -4,6 +4,7 @@ import initTranslations from '@/lib/i18n';
 import TranslationsProvider from '@/components/translations/TranslationProvider';
 import Header from '@/components/Header';
 import i18nConfig from '@/i18nConfig';
+import { Footer } from '@/components/Footer';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
 
@@ -21,11 +22,12 @@ export default async function RootLayout({
   const { options } = await initTranslations(locale, ['shared']);
 
   return (
-    <html lang={locale} className='relative overflow-x-hidden'>
+    <html lang={locale} className="relative overflow-x-hidden">
       <body className={openSans.className}>
         <TranslationsProvider namespaces={options.ns} locale={locale}>
           <Header locale={locale} />
           {children}
+          <Footer />
         </TranslationsProvider>
       </body>
     </html>

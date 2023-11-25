@@ -1,0 +1,5 @@
+/climate
+/health
+/culture
+/donate
+/contact
