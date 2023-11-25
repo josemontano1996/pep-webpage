@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { Metadata } from 'next';
 import initTranslations from '@/lib/i18n';
 
@@ -67,15 +66,16 @@ export default async function Home({ params: { locale } }: Props) {
               </p>
             </article>
           </MaxWidthWrapper>
-          <article className="relative my-20 ml-[10vw] max-w-[90vw] bg-lime-200 pt-20">
+          <article className="relative my-20 ml-[10vw] max-w-[90vw] bg-lime-100 pt-20">
             <h4 className="absolute left-1/2 top-3 mb-8 -translate-x-1/2 transform text-center text-4xl">
               {t('s1-t2')}
             </h4>
             <div className="grid w-[80vw] grid-cols-2 justify-items-center gap-10">
-              <div>
+              <div className='flex flex-col justify-end'>
                 <Image
                   src={sustainabilityImg}
                   alt={'Welcome image'}
+                  
                   objectFit="cover"
                 />
               </div>
