@@ -5,17 +5,14 @@ import { buttonVariants } from './ui/button';
 import { cn } from '@/lib/utils';
 import LocaleSelector from './translations/LocaleSelector';
 import initTranslations from '@/lib/i18n';
+import HeaderLeftNav from './HeaderLeftNav';
 
 const Header = async ({ locale }: { locale: string }) => {
   const { t } = await initTranslations(locale, ['shared']);
   return (
-    <header className="sticky top-0 flex items-center px-[3vw]">
+    <header className="sticky top-0 flex items-center px-[3vw] py-1 z-50 bg-white">
       <nav className="flex-1">
-        <ul className="flex gap-10">
-          <li>Who are we?</li>
-          <li>What do we do?</li>
-          <li>Transparecy</li>
-        </ul>
+        <HeaderLeftNav />
       </nav>
       <h1>
         <LocaleLink path={'/'}>
@@ -29,7 +26,7 @@ const Header = async ({ locale }: { locale: string }) => {
             path="/contact"
             styling={cn(buttonVariants({ variant: 'ghost' }))}
           >
-            Contact
+            {t('right-nav-contact')}
           </LocaleLink>
         </li>
         <li>
@@ -37,7 +34,7 @@ const Header = async ({ locale }: { locale: string }) => {
             path={'/donate'}
             styling={cn(buttonVariants({ variant: 'destructive' }))}
           >
-            Donate
+            {t('right-nav-donate')}
           </LocaleLink>
         </li>
         <li>

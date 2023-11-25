@@ -39,7 +39,7 @@ const LocaleSelector = () => {
     <select
       onChange={handleChange}
       value={currentLocale}
-      className="bg-transparent"
+      className="bg-transparent text-lg"
     >
       <option value="de">DE</option>
       <option value="es">ES</option>
