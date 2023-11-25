@@ -67,8 +67,8 @@ export default async function Home({ params: { locale } }: Props) {
               </p>
             </article>
           </MaxWidthWrapper>
-          <article className="relative my-20 ml-[10vw] max-w-[90vw] bg-lime-200 pt-14">
-            <h4 className="absolute left-1/2 top-1 mb-8 -translate-x-1/2 transform text-center text-4xl">
+          <article className="relative my-20 ml-[10vw] max-w-[90vw] bg-lime-200 pt-20">
+            <h4 className="absolute left-1/2 top-3 mb-8 -translate-x-1/2 transform text-center text-4xl">
               {t('s1-t2')}
             </h4>
             <div className="grid w-[80vw] grid-cols-2 justify-items-center gap-10">
@@ -110,15 +110,14 @@ export default async function Home({ params: { locale } }: Props) {
         </section>
         <MaxWidthWrapper>
           <section>
-            <article>
-              <h2 className="mb-10 text-center text-4xl font-semibold">
-                Was machen wir?
-              </h2>
+            <h2 className="mb-10 text-center text-4xl font-semibold">
+              Was machen wir?
+            </h2>
+            <div className="flex flex-col space-y-16">
               <div className="grid grid-cols-2 gap-10 space-y-7">
                 <div className="my-auto">
                   <Image src={umweltImg} alt={'umwelt img'} />
                 </div>
-
                 <div className="flex flex-col justify-between space-y-7">
                   <h4 className="flex items-center gap-2 text-3xl font-medium text-green-500">
                     <span>
@@ -169,6 +168,8 @@ export default async function Home({ params: { locale } }: Props) {
                     </LocaleLink>
                   </div>
                 </div>
+              </div>
+              <div className="grid grid-cols-2 gap-10 space-y-7">
                 <div className="flex flex-col justify-between space-y-7">
                   <h4 className="flex items-center gap-2 text-3xl font-medium text-rose-500">
                     <span>
@@ -176,7 +177,6 @@ export default async function Home({ params: { locale } }: Props) {
                     </span>
                     Für die Gesundheit
                   </h4>
-
                   <p>
                     Da gerade den{' '}
                     <span className="font-semibold text-rose-500">
@@ -213,7 +213,8 @@ export default async function Home({ params: { locale } }: Props) {
                 <div className="my-auto">
                   <Image src={healthImg} alt={''} />
                 </div>
-
+              </div>
+              <div className="grid grid-cols-2 gap-10 space-y-7">
                 <div className="my-auto">
                   <Image src={educationImg} alt={''} />
                 </div>
@@ -254,7 +255,7 @@ export default async function Home({ params: { locale } }: Props) {
                   </div>
                 </div>
               </div>
-            </article>
+            </div>
           </section>
         </MaxWidthWrapper>
       </div>
