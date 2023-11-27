@@ -18,7 +18,7 @@ type TSelectValue = 'recurring' | 'single';
 const StripeSelect = () => {
   const { t } = useTranslation();
   const [donationType, setDonationType] = useState<TSelectValue>('single');
-  console.log(donationType);
+
   const onHandleChange = (e: TSelectValue) => {
     setDonationType(e);
   };

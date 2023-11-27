@@ -1,8 +1,10 @@
 'use client';
 
+import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
+import emailjs from '@emailjs/browser';
 import {
   Form,
   FormControl,
@@ -28,6 +30,7 @@ const formSchema = z.object({
 });
 
 const BecomeMember = () => {
+  const closeButton = useRef<HTMLButtonElement | null>(null);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -39,7 +42,29 @@ const BecomeMember = () => {
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
+    const { username, email, message } = values;
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          user_name: username,
+          user_email: email,
+          message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+      )
+      .then(
+        () => {
+          form.reset();
+          closeButton.current?.click();
+          alert('You message was succefully submited, we will reach you ASAP.');
+        },
+        (error) => {
+          console.log(error);
+          alert('Something went wrong');
+        },
+      );
   };
   return (
     <Dialog>
@@ -94,7 +119,7 @@ const BecomeMember = () => {
             <div className="flex justify-between">
               <Button type="submit">Submit</Button>
               <DialogClose asChild>
-                <Button type="button" variant={'ghost'}>
+                <Button type="button" variant={'ghost'} ref={closeButton}>
                   Close
                 </Button>
               </DialogClose>
