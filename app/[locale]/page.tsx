@@ -140,7 +140,7 @@ export default async function Home({ params: { locale } }: Props) {
                   </p>
                   <p>
                     Wir beschlossen, als nächstes Projekt die Aufforstung der
-                    Andenregion zu fördern.
+                    Andenregion zu fördern.{' '}
                     <span className="font-semibold text-green-600">
                       So haben wir in der Region Cajamarca die Aufzucht von
                       100.000 Bäumen initiiert

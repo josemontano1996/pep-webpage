@@ -1,10 +1,5 @@
 'use client';
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '../ui/card';
+import { Card, CardDescription, CardHeader, CardTitle } from '../ui/card';
 import StripeSelect from './StripeSelect';
 
 const StripeDonation = () => {
@@ -14,7 +9,11 @@ const StripeDonation = () => {
         <CardTitle className="mb-2">Online Donation</CardTitle>
         <CardDescription>
           Directly make a donation online. Powered by{' '}
-          <a className="italic hover:underline" href="https://stripe.com/">
+          <a
+            target="_blank"
+            className="italic hover:underline"
+            href="https://stripe.com/"
+          >
             Stripe
           </a>{' '}
           you can safely either make a single or recurring donation.

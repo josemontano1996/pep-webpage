@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { CopyButton } from './CopyButton';
+import BecomeMember from './BecomeMember';
 
 export default function BecomeMemberCard() {
   return (
@@ -20,7 +20,7 @@ export default function BecomeMemberCard() {
       </CardHeader>
 
       <CardFooter className="flex flex-col items-center">
-        <CopyButton>Become a Member</CopyButton>
+        <BecomeMember />
       </CardFooter>
     </Card>
   );
