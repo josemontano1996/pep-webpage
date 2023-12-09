@@ -26,9 +26,9 @@ export default async function RootLayout({
       <body className={openSans.className}>
         <TranslationsProvider namespaces={options.ns} locale={locale}>
           <Header locale={locale} />
-          <div className="flex flex-col min-h-[81vh]">
+          <main className="flex flex-col min-h-[81vh]">
             <div className='flex-1'>{children}</div>
-          </div>
+          </main>
           <Footer />
         </TranslationsProvider>
       </body>

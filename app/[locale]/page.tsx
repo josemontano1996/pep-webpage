@@ -6,12 +6,13 @@ import heroImage from '@/public/imgs/heroImg-min.jpg';
 import sustainabilityImg from '@/public/imgs/sustainability-leaf.jpg';
 import healthImg from '@/public/imgs/gesundheitmain.png';
 import educationImg from '@/public/imgs/educationImg.png';
-import umweltImg from '@/public/imgs/peru-jungle.jpg';
+import umweltImg from '@/public/imgs/umwelt2.jpg';
 import MaxWidthWrapper from '@/components/Wrappers/MaxWidthWrapper';
 import { HeartPulse, Trees } from 'lucide-react';
 import LocaleLink from '@/components/translations/LocaleLink';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
+import ReadMore from '@/components/ReadMore';
 
 interface Props {
   params: { locale: string };
@@ -27,7 +28,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function Home({ params: { locale } }: Props) {
+export default async function HomePage({ params: { locale } }: Props) {
   const { t } = await initTranslations(locale, ['home']);
 
   return (
@@ -71,34 +72,36 @@ export default async function Home({ params: { locale } }: Props) {
               {t('s1-t2')}
             </h4>
             <div className="grid w-[80vw] grid-cols-2 justify-items-center gap-10">
-              <div className='flex flex-col justify-end'>
+              <div className="flex flex-col justify-end">
                 <Image
                   src={sustainabilityImg}
                   alt={'Welcome image'}
-                  
                   objectFit="cover"
                 />
               </div>
               <p className="my-auto">
-                Unsere Arbeit dreht sich um die{' '}
+                Unsere Arbeit dreht sich um Unsere Arbeit dreht sich um die{' '}
                 <span className="font-semibold text-primary">
-                  soziale und ökonomische nachhaltige Entwicklung
-                </span>
-                . Unter sozialer Entwicklung verstehen wir nicht nur die
-                Verbesserung der individuellen Lebensbedingungen, sondern
-                vielmehr die positive Veränderung der sozialen, wirtschaftlichen
-                und politischen Strukturen, ohne die keine Nachhaltigkeit
-                gewährleistet ist.{' '}
-                <span className="font-semibold text-primary">
-                  Aus Sicht von PEP ist ökonomische Entwicklung viel mehr als
-                  wirtschaftliches Wachstum
+                  die soziale und ökonomische nachhaltige Entwicklung.
                 </span>{' '}
-                , denn dieses hat einen Sinn, nur wenn es von einer gerechteren
+                Unter{' '}
+                <span className="font-semibold text-primary">
+                  sozialer Entwicklung
+                </span>{' '}
+                verstehen wir die Verbesserung der individuellen
+                Lebensbedingungen und die positive Veränderung der sozialen,
+                wirtschaftlichen und politischen Strukturen, ohne die keine
+                sozialer Entwicklung Nachhaltigkeit gewährleistet ist. Aus Sicht{' '}
+                <span className="font-semibold text-primary">
+                  von PEP ist ökonomische Entwicklung viel mehr als
+                  wirtschaftliches Wachstum,
+                </span>
+                denn dieses hat einen Sinn, nur wenn es von einer gerechteren
                 Verteilung der wirtschaftlichen Erfolge innerhalb der
                 Bevölkerung und die langfristige Erhaltung der Ressourcen
-                begleitet wird. Nachhaltigkeit oder nachhaltige Entwicklung
-                bedeutet, die Bedürfnisse der Gegenwart so zu befriedigen, dass
-                die Möglichkeiten zukünftiger Generationen nicht eingeschränkt
+                begleitet wird. Nachhaltige Entwicklung bedeutet, die
+                Bedürfnisse der Gegenwart so zu befriedigen, dass die
+                Möglichkeiten zukünftiger Generationen nicht eingeschränkt
                 werden.{' '}
                 <span className="font-semibold text-primary">
                   Nachhaltigkeit impliziert wirtschaftliche Effizienz, soziale
@@ -126,36 +129,35 @@ export default async function Home({ params: { locale } }: Props) {
                     Für die Umwelt und Klimawandel{' '}
                   </h4>
                   <p className="mt-3">
-                    Unter dem Eindruck der Klimakrise änderten nun wir unsere
-                    Handlungsschwerpunkt. Der südamerikanische Kontinent{' '}
-                    <span>
-                      ist besonders bedroht von klimatischen Veränderungen
-                    </span>{' '}
-                    wie der Zunahme des Niño-Phänomens und dem Abschmelzen der
-                    Anden-Gletscher.{' '}
-                    <span>
-                      Der Kontinent hatmit ca. 20% einen großen Anteil an der
-                      CO2-Bindung weltweit.
+                    <span className="font-semibold text-primary">
+                      {' '}
+                      Die Erderwärmung schreitet immer schneller voran
                     </span>
+                    und ist durch Veränderungen im Klimasystem in allen Regionen
+                    der Welt spürbar. Die Auswirkungen der globalen Erwärmung
+                    wegen des Treibhauseffektes werden immer stärker und{' '}
+                    <span className="font-semibold text-primary">
+                      es ist dringend erforderlich, die CO2-Konzentration in der
+                      Atmosphäre zu reduzieren.{' '}
+                    </span>
+                    Die Reduktion der CO2-Emissionen wird dafür nicht reichen,
+                    man braucht eine aktive Entnahme von Kohlendioxid aus der
+                    Atmosphäre. Darüber besteht Einigkeit in der Wissenschaft.
                   </p>
                   <p>
-                    Wir beschlossen, als nächstes Projekt die Aufforstung der
-                    Andenregion zu fördern.{' '}
-                    <span className="font-semibold text-green-600">
-                      So haben wir in der Region Cajamarca die Aufzucht von
-                      100.000 Bäumen initiiert
-                    </span>
-                    , die nach Erreichen der entsprechenden Größe in der
-                    nächsten Regenperiode in der Provinz St. Miguel angepflanzt
-                    werden. Das Projekt wurde von der Landbevölkerung sofort
-                    aufgenommen und aktiv unterstützt. So fanden sich über 60
-                    Freiwillige, die bei der Aufforstung mitwirken.
-                    <span className="font-semibold text-green-600">
-                      {' '}
-                      Wir haben uns zum Ziel gesetzt, in den kommenden Jahren
-                      auf bis zu 1 Million gepflanzte Bäume zu kommen.
-                    </span>
+                    Wir wollen durch{' '}
+                    <span className="font-semibold text-primary">
+                      Aufforstung zur aktiven Entnahme von Kohlendioxid aus der
+                      Atmosphäre
+                    </span>{' '}
+                    beitragen, und dadurch die negative Auswirkungen der
+                    Klimakrise weltweit abmildern. Damit verbessern wir auch die
+                    wirtschaftliche, soziale und ökologische Bedingungen der
+                    Familien, die sich direkt an den Projekt beteiligen, aber
+                    auch deren der Nachbarschaft. <ReadMore/>
                   </p>
+        
+
                   <div className="mt-3 text-center">
                     <LocaleLink
                       path="/climate"
@@ -164,7 +166,7 @@ export default async function Home({ params: { locale } }: Props) {
                         'bg-green-500 hover:bg-green-500/70',
                       )}
                     >
-                      weitere Informationen
+                    Projeckte
                     </LocaleLink>
                   </div>
                 </div>
@@ -179,7 +181,7 @@ export default async function Home({ params: { locale } }: Props) {
                   </h4>
                   <p>
                     Da gerade den{' '}
-                    <span className="font-semibold text-rose-500">
+                    <span className="font-semibold text-primary">
                       armen Bevölkerungsschichten keine regelmäßige medizinische
                       Versorgung zur Verfügung steht
                     </span>
@@ -194,7 +196,7 @@ export default async function Home({ params: { locale } }: Props) {
                   <p className=" mb-6 mt-3">
                     In Zusammenarbeit mit <span>INTERPLAST Germany</span> und
                     anderen Institutionen{' '}
-                    <span className="font-semibold text-rose-500">
+                    <span className="font-semibold text-primary">
                       führen wir medizinische Einsätze in Peru durch.
                     </span>
                   </p>
