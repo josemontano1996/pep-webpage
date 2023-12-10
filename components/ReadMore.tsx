@@ -1,8 +1,6 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
   DialogTitle,
   DialogTrigger,
 } from './ui/dialog';
@@ -13,7 +11,7 @@ import { buttonVariants } from './ui/button';
 const ReadMore = () => {
   return (
     <Dialog>
-      <DialogTrigger className="italic hover:cursor-pointer hover:underline">
+      <DialogTrigger className="italic hover:cursor-pointer hover:underline text-red-500">
         mehr lesen
       </DialogTrigger>
       <DialogContent className="max-h-[80vh] max-w-[80vw] overflow-auto bg-lime-100 ">

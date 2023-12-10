@@ -5,7 +5,7 @@ import initTranslations from '@/lib/i18n';
 import heroImage from '@/public/imgs/heroImg-min.jpg';
 import sustainabilityImg from '@/public/imgs/sustainability-leaf.jpg';
 import healthImg from '@/public/imgs/gesundheitmain.png';
-import educationImg from '@/public/imgs/educationImg.png';
+import educationImg from '@/public/imgs/health/groupImage.jpg';
 import umweltImg from '@/public/imgs/umwelt2.jpg';
 import MaxWidthWrapper from '@/components/Wrappers/MaxWidthWrapper';
 import { HeartPulse, Trees } from 'lucide-react';
@@ -119,7 +119,11 @@ export default async function HomePage({ params: { locale } }: Props) {
             <div className="flex flex-col space-y-16">
               <div className="grid grid-cols-2 gap-10 space-y-7">
                 <div className="my-auto">
-                  <Image src={umweltImg} alt={'umwelt img'} />
+                  <Image
+                    src={umweltImg}
+                    alt={'umwelt img'}
+                    className="rounded-xl"
+                  />
                 </div>
                 <div className="flex flex-col justify-between space-y-7">
                   <h4 className="flex items-center gap-2 text-3xl font-medium text-green-500">
@@ -131,7 +135,7 @@ export default async function HomePage({ params: { locale } }: Props) {
                   <p className="mt-3">
                     <span className="font-semibold text-primary">
                       {' '}
-                      Die Erderwärmung schreitet immer schneller voran
+                      Die Erderwärmung schreitet immer schneller voran{' '}
                     </span>
                     und ist durch Veränderungen im Klimasystem in allen Regionen
                     der Welt spürbar. Die Auswirkungen der globalen Erwärmung
@@ -154,9 +158,8 @@ export default async function HomePage({ params: { locale } }: Props) {
                     Klimakrise weltweit abmildern. Damit verbessern wir auch die
                     wirtschaftliche, soziale und ökologische Bedingungen der
                     Familien, die sich direkt an den Projekt beteiligen, aber
-                    auch deren der Nachbarschaft. <ReadMore/>
+                    auch deren der Nachbarschaft. <ReadMore />
                   </p>
-        
 
                   <div className="mt-3 text-center">
                     <LocaleLink
@@ -166,7 +169,7 @@ export default async function HomePage({ params: { locale } }: Props) {
                         'bg-green-500 hover:bg-green-500/70',
                       )}
                     >
-                    Projeckte
+                      Projekte
                     </LocaleLink>
                   </div>
                 </div>
@@ -180,26 +183,26 @@ export default async function HomePage({ params: { locale } }: Props) {
                     Für die Gesundheit
                   </h4>
                   <p>
-                    Da gerade den{' '}
-                    <span className="font-semibold text-primary">
-                      armen Bevölkerungsschichten keine regelmäßige medizinische
-                      Versorgung zur Verfügung steht
-                    </span>
-                    , werden nicht unmittelbar lebensnotwendige Operationen in
-                    der Regel auch nicht durchgeführt. Angeborene oder erworbene
-                    Fehlbildungen, die durch unproblematische Eingriffe behoben
-                    oder verbessert werden könnten, bedeuten für die Betroffenen
-                    unbehandelt nicht nur sozial, sondern auch wirtschaftlich
-                    eine massive Einschränkung, oft sogar eine gesellschaftliche
-                    Ausgrenzung.
+                    Die Mehrheit der peruanischen Bevölkerung hat keinen Zugang
+                    zu angemessenen Gesundheitsversorgung, oft nicht einmal zu
+                    den grundlegendsten.
                   </p>
-                  <p className=" mb-6 mt-3">
-                    In Zusammenarbeit mit <span>INTERPLAST Germany</span> und
-                    anderen Institutionen{' '}
-                    <span className="font-semibold text-primary">
-                      führen wir medizinische Einsätze in Peru durch.
+                  <p>
+                    {' '}
+                    Die Patienten müssen in der Regel die gesamten Kosten ihrer
+                    Behandlung selbst tragen. Das führt oft dazu, dass{' '}
+                    <span className='text-primary font-semibold'>
+                      viele Patienten der armen Bevölkerungsschichten
+                      unbehandelt bleiben.
                     </span>
                   </p>
+                  <p>
+                    {' '}
+                    Seit 2002 haben wir in Zusammenarbeit mit anderen lokalen
+                    und internationalen Organisationen medizinische Einsätze
+                    durchgeführt.
+                  </p>
+
                   <div className="mt-3 text-center">
                     <LocaleLink
                       path="/health"
@@ -218,7 +221,7 @@ export default async function HomePage({ params: { locale } }: Props) {
               </div>
               <div className="grid grid-cols-2 gap-10 space-y-7">
                 <div className="my-auto">
-                  <Image src={educationImg} alt={''} />
+                  <Image src={educationImg} alt={''} className="rounded-xl" />
                 </div>
                 <div className="flex flex-col justify-between space-y-7">
                   <h4 className="flex items-center gap-2 text-3xl font-medium text-blue-600">

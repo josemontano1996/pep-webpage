@@ -1,18 +1,18 @@
 import LogoImg from '@/public/imgs/logoImg.jpg';
 import Image from 'next/image';
-import LocaleLink from './translations/LocaleLink';
-import { buttonVariants } from './ui/button';
+import LocaleLink from '../translations/LocaleLink';
+import { buttonVariants } from '../ui/button';
 import { cn } from '@/lib/utils';
-import LocaleSelector from './translations/LocaleSelector';
+import LocaleSelector from '../translations/LocaleSelector';
 import initTranslations from '@/lib/i18n';
-import HeaderLeftNav from './HeaderLeftNav';
+import LeftNav from './LeftNavBar';
 
-const Header = async ({ locale }: { locale: string }) => {
+const NavBar = async ({ locale }: { locale: string }) => {
   const { t } = await initTranslations(locale, ['shared']);
   return (
-    <header className="sticky top-0 flex items-center px-[3vw] py-1 z-50 bg-white">
+    <header className="sticky top-0 z-50 flex items-center bg-white px-[3vw] py-1">
       <nav className="flex-1">
-        <HeaderLeftNav />
+        <LeftNav />
       </nav>
       <h1>
         <LocaleLink path={'/'}>
@@ -45,4 +45,4 @@ const Header = async ({ locale }: { locale: string }) => {
   );
 };
 
-export default Header;
+export default NavBar;

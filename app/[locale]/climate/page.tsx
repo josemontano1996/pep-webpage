@@ -1,11 +1,13 @@
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 import MaxWidthWrapper from '@/components/Wrappers/MaxWidthWrapper';
 import mapPhoto from '@/public/imgs/map-cajamarca.jpg';
 import viveroPhoto from '@/public/imgs/vivero.jpg';
 import hoyacionPhoto from '@/public/imgs/hoyacion.jpg';
-import { Button, buttonVariants } from '@/components/ui/button';
+import ventajasSociales from '@/public/imgs/ventajassociales.jpg';
+import { buttonVariants } from '@/components/ui/button';
 import LocaleLink from '@/components/translations/LocaleLink';
-import { cn } from '@/lib/utils';
+import DonateCallToAction from '@/components/DonateCallToAction';
 
 const ClimatePage = () => {
   return (
@@ -57,8 +59,9 @@ const ClimatePage = () => {
           </div>
         </div>
       </section>
-      <section className="space-y-6 pb-12 pt-14">
+      <section className=" space-y-6 pb-12 pt-14">
         <h3 className="text-2xl">PROJEKTVORTEILE</h3>
+
         <div>
           <h5 className="mb-1 text-xl">VORTEILE FÜR DIE UMWELT</h5>
           <p>
@@ -74,41 +77,49 @@ const ClimatePage = () => {
         </div>
         <div>
           <h5 className="mb-1 text-xl">SOZIALE VORTEILE</h5>
-          <p>
-            Ziel des Projekts ist auch, die Lebensbedingungen der betroffenen
-            Bevölkerung zu verbessern. Der Wald versorgt sie mit Holz und
-            Brennholz und stellt eine zusätzliche Einnahmequelle dar. Der Wald
-            wirkt sich positiv auf die Wasserversorgung aus. Der Wald verbessert
-            das Mikroklima und trägt zum Wohlbefinden der umliegenden
-            Bevölkerung bei. Der Wald verändert die Landschaft und verschönert
-            sie. Menschen, die durch ihn wandern oder spazieren gehen, haben
-            viele Vorteile: Linderung von Stress und depressiven Verstimmungen,
-            Senkung des Blutdrucks und der Pulsfrequenz (der bloße Anblick des
-            Waldes reicht aus, um den Blutdruck zu senken), Stärkung des
-            Immunsystems usw. Darüber hinaus trägt das Projekt zur Verbesserung
-            der Organisations- und Managementfähigkeiten der beteiligten
-            Gemeinden bei, da diese sich bei der Einrichtung und Bewirtschaftung
-            des Waldes organisieren, ausbilden und zusammenarbeiten müssen.
-          </p>
+          <div className="grid grid-cols-12 items-center gap-8">
+            <div className="col-span-6">
+              <p>
+                Ziel des Projekts ist auch, die Lebensbedingungen der
+                betroffenen Bevölkerung zu verbessern. Der Wald versorgt sie mit
+                Holz und Brennholz und stellt eine zusätzliche Einnahmequelle
+                dar. Der Wald wirkt sich positiv auf die Wasserversorgung aus.
+                Der Wald verbessert das Mikroklima und trägt zum Wohlbefinden
+                der umliegenden Bevölkerung bei. Der Wald verändert die
+                Landschaft und verschönert sie. Menschen, die durch ihn wandern
+                oder spazieren gehen, haben viele Vorteile: Linderung von Stress
+                und depressiven Verstimmungen, Senkung des Blutdrucks und der
+                Pulsfrequenz (der bloße Anblick des Waldes reicht aus, um den
+                Blutdruck zu senken), Stärkung des Immunsystems usw. Darüber
+                hinaus trägt das Projekt zur Verbesserung der Organisations- und
+                Managementfähigkeiten der beteiligten Gemeinden bei, da diese
+                sich bei der Einrichtung und Bewirtschaftung des Waldes
+                organisieren, ausbilden und zusammenarbeiten müssen.
+              </p>
+            </div>
+            <div className="col-span-6">
+              <Image src={ventajasSociales} alt="" className="rounded-xl" />
+            </div>
+          </div>
         </div>
         <div>
           <h5 className="mb-1 text-xl">WIRTSCHAFTLICHE VORTEILE</h5>
           <p>
             Der Wald hat eine Reihe positiver wirtschaftlicher Auswirkungen.
             Schon durch seine Anpflanzung generiert er Arbeit und ist eine
-            Einnahmequelle. Es diversifiziert die Wirtschaftstätigkeit der
-            Region, da neue produktive Aktivitäten in der Waldbewirtschaftung
-            (Anpflanzung, Beschneidung, Durchforstung, Holzernte, usw.) und bei
-            der Holznutzung (Transport, Zimmerei, Bauwesen usw.) entstehen. Im
-            Wald werden auch Speisepilze auf natürliche Weise produziert, die
-            direkt verzehrt oder verkauft werden können.
+            Einnahmequelle für die Dorfbewohner. Es diversifiziert die
+            Wirtschaftstätigkeit der Region, da neue produktive Aktivitäten in
+            der Waldbewirtschaftung (Anpflanzung, Beschneidung, Durchforstung,
+            Holzernte, usw.) und bei der Holznutzung (Transport, Zimmerei,
+            Bauwesen usw.) entstehen. Im Wald werden auch Speisepilze auf
+            natürliche Weise produziert, die direkt verzehrt oder verkauft
+            werden können.
           </p>
         </div>
       </section>
       <section className="space-y-6">
         <div>
           <h3 className="mb-1 text-2xl">ANPFLANZUNG</h3>
-
           <p>
             Durch das Pflanzen von Bäumen wird Kohlendioxid aus der Atmosphäre
             gebunden, um den Treibhauseffekt zu reduzieren und so der globalen
@@ -121,7 +132,7 @@ const ClimatePage = () => {
           </p>
         </div>
         <div className="grid grid-cols-12 items-center gap-6">
-          <div className="col-span-5 space-y-4">
+          <div className="col-span-6 space-y-4">
             <div>
               <h5 className="mb-1 text-xl">AUSWAHL DER BAUMART</h5>
               <p>
@@ -154,15 +165,15 @@ const ClimatePage = () => {
               </p>
             </div>
           </div>
-          <div className="col-span-7">
-            <Image src={viveroPhoto} alt="" />
+          <div className="col-span-6">
+            <Image src={viveroPhoto} alt="" className="rounded-xl" />
           </div>
         </div>
         <div className="grid grid-cols-12 gap-6 py-10">
-          <div className="col-span-5">
-            <Image src={hoyacionPhoto} alt="" />
+          <div className="col-span-4">
+            <Image src={hoyacionPhoto} alt="" className="rounded-xl" />
           </div>
-          <div className="col-span-7 space-y-4">
+          <div className="col-span-8 flex flex-col justify-between space-y-4">
             <div>
               <h3 className="mb-1 text-2xl">PFLANZUNG</h3>
               <p>
@@ -196,14 +207,7 @@ const ClimatePage = () => {
                 Das Projekt wird ausschließlich durch Spenden finanziert. Wir
                 benötigen Ihre wertvolle Unterstützung.
               </p>
-              <div className="my-4 flex justify-center">
-                <LocaleLink
-                  path={'/donate'}
-                  styling={cn(buttonVariants({ variant: 'destructive' }))}
-                >
-                  Jetz Spenden
-                </LocaleLink>
-              </div>
+             <DonateCallToAction/>
             </div>
           </div>
         </div>

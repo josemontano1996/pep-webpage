@@ -2,9 +2,9 @@ import { Open_Sans } from 'next/font/google';
 import '../globals.css';
 import initTranslations from '@/lib/i18n';
 import TranslationsProvider from '@/components/translations/TranslationProvider';
-import Header from '@/components/Header';
 import i18nConfig from '@/i18nConfig';
 import { Footer } from '@/components/Footer';
+import NavBar from '@/components/NavBar/NavBar';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
 
@@ -25,9 +25,9 @@ export default async function RootLayout({
     <html lang={locale} className="relative overflow-x-hidden">
       <body className={openSans.className}>
         <TranslationsProvider namespaces={options.ns} locale={locale}>
-          <Header locale={locale} />
-          <main className="flex flex-col min-h-[81vh]">
-            <div className='flex-1'>{children}</div>
+          <NavBar locale={locale} />
+          <main className="flex min-h-[81vh] flex-col">
+            <div className="flex-1">{children}</div>
           </main>
           <Footer />
         </TranslationsProvider>
