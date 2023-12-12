@@ -8,7 +8,7 @@ import {
   MenubarTrigger,
 } from '@/components/ui/menubar';
 import { useTranslation } from 'react-i18next';
-import NavBarIndexProvider from '../providers/NavBarIndexProvider';
+import NavBarIndexProvider from './NavBarIndexProvider';
 
 export default function LeftNav() {
   const { t } = useTranslation();

@@ -1,8 +1,9 @@
 import Image from 'next/image';
 
-import groupImage from '@/public/imgs/health/groupImage.jpg';
 import oxigenPlant from '@/public/imgs/oxigen-plant.png';
 import DonateCallToAction from '@/components/DonateCallToAction';
+import SlideShow from '@/components/SlideShow';
+import { chirurgicImages } from '@/consts/health-page';
 
 const page = () => {
   return (
@@ -42,7 +43,13 @@ const page = () => {
             </p>
           </div>
           <div className="col-span-6">
-            <Image src={groupImage} alt={''} />
+            <SlideShow
+              images={chirurgicImages}
+              alt={''}
+              height={500}
+              width={700}
+              animation="fade-in-out-slider"
+            />
           </div>
         </div>
       </section>

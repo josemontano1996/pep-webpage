@@ -1,7 +1,7 @@
 'use client';
 
 import { useParams, usePathname } from 'next/navigation';
-import HomeNav from '../NavBar/HomeNav';
+import HomeNav from './HomeNav';
 
 const NavBarIndexProvider = () => {
   const pathname = usePathname().split('/')[2] || '';
