@@ -62,7 +62,7 @@ const SlideShow = ({ images, alt, height, width, animation }: Props) => {
       // Clear the interval when the component unmounts or isAuto becomes false
       clearInterval(intervalId as any);
     };
-  }, [isAuto]);
+  }, [isAuto, images.length]);
 
   if (!isMounted) return null;
 
