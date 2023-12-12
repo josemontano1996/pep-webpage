@@ -27,12 +27,11 @@ const SlideShow = ({ images, alt, height, width, animation }: Props) => {
     );
   };
 
-/*   const startAutoSlide = () => {
+  /*   const startAutoSlide = () => {
     setIsAuto(true);
   }; */
 
   const stopAutoSlide = (move: 'forwards' | 'backwards') => {
-    setIsAuto(false);
     if (move === 'backwards') {
       prevSlide();
     }
@@ -40,43 +39,45 @@ const SlideShow = ({ images, alt, height, width, animation }: Props) => {
     if (move === 'forwards') {
       nextSlide();
     }
+    setIsAuto(false);
   };
 
   useEffect(() => {
+    let intervalId: NodeJS.Timeout | null = null;
+
+    const slideHandler = () => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+    };
+
     if (isAuto) {
-      intervalRef.current = setInterval(() => {
-        nextSlide();
-      }, 3500); // Change the duration as per your requirement
-    } else {
-      // Check if intervalRef.current is not null before calling clearInterval
-      intervalRef.current !== null && clearInterval(intervalRef.current);
+      intervalId = setInterval(slideHandler, 3500); // Start automatic sliding
     }
+
     return () => {
-      // Check if intervalRef.current is not null before calling clearInterval
-      if (intervalRef.current !== null) {
-        clearInterval(intervalRef.current);
-      }
+      // Clear the interval when the component unmounts or isAuto becomes false
+      clearInterval(intervalId as any);
     };
   }, [isAuto]);
 
   return (
-    <div className="flex w-full select-none items-center justify-between ease-in-out">
+    <div className="flex w-full select-none items-center justify-between gap-4 ease-in-out">
       <ChevronLeft onClick={() => stopAutoSlide('backwards')} />
-      <div className="w-[85%]">
-        {images.map(
-          (image, i) =>
-            i === currentSlide && (
+
+      {images.map(
+        (image, i) =>
+          i === currentSlide && (
+            <div key={i}>
               <Image
                 width={width}
                 height={height}
-                key={i}
                 src={image.img}
                 alt={alt}
-                className={`${animation} h-[${height}px] w-[${width}px] object-cover transition`}
+                className="object-cover"
               />
-            ),
-        )}
-      </div>
+            </div>
+          ),
+      )}
+
       <ChevronRight onClick={() => stopAutoSlide('forwards')} />
     </div>
   );

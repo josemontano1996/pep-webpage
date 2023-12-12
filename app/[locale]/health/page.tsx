@@ -1,9 +1,6 @@
-import Image from 'next/image';
-
-import oxigenPlant from '@/public/imgs/oxigen-plant.png';
 import DonateCallToAction from '@/components/DonateCallToAction';
 import SlideShow from '@/components/SlideShow';
-import { chirurgicImages } from '@/consts/health-page';
+import { chirurgicImages, oxigenPlantImages } from '@/consts/health-page';
 
 const page = () => {
   return (
@@ -41,6 +38,7 @@ const page = () => {
               Diese bringen ebenfalls über die Invalidität die
               Erwerbsunfähigkeit mit sich.
             </p>
+            <DonateCallToAction />
           </div>
           <div className="col-span-6">
             <SlideShow
@@ -60,10 +58,16 @@ const page = () => {
           </h2>
         </div>
         <div className="grid grid-cols-12 gap-8">
-          <div className="col-span-6">
-            <Image src={oxigenPlant} alt={''} />
+          <div className="col-span-7">
+            <SlideShow
+              images={oxigenPlantImages}
+              alt={''}
+              height={500}
+              width={650}
+              animation="fade-in-out-slider"
+            />
           </div>
-          <div className="col-span-6 my-auto space-y-6">
+          <div className="col-span-5 my-auto space-y-6">
             <p>
               Im Zuge der Covid-19 Pandemie kam es in vielen Städten Perus zu
               einem Engpass in der Sauerstoffversorgung. Viele Patienten starben
