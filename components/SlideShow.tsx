@@ -12,6 +12,7 @@ type Props = {
 };
 
 const SlideShow = ({ images, alt, height, width, animation }: Props) => {
+  const [isMounted, setisMounted] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAuto, setIsAuto] = useState(true);
 
@@ -43,6 +44,10 @@ const SlideShow = ({ images, alt, height, width, animation }: Props) => {
   };
 
   useEffect(() => {
+    setisMounted(true);
+  }, []);
+
+  useEffect(() => {
     let intervalId: NodeJS.Timeout | null = null;
 
     const slideHandler = () => {
@@ -59,6 +64,8 @@ const SlideShow = ({ images, alt, height, width, animation }: Props) => {
     };
   }, [isAuto]);
 
+  if (!isMounted) return null;
+
   return (
     <div className="flex w-full select-none items-center justify-between gap-4 ease-in-out">
       <ChevronLeft onClick={() => stopAutoSlide('backwards')} />
@@ -72,7 +79,8 @@ const SlideShow = ({ images, alt, height, width, animation }: Props) => {
                 height={height}
                 src={image.img}
                 alt={alt}
-                className="object-cover"
+                loading='eager'
+                className={`object-cover ${isAuto ? animation : ''}`}
               />
             </div>
           ),
