@@ -14,7 +14,7 @@ export default function LeftNav() {
   const { t } = useTranslation();
   return (
     <>
-      <Menubar>
+      <Menubar className="hidden lg:flex">
         <NavBarIndexProvider />
         <MenubarMenu>
           <MenubarTrigger> {t('left-nav-title-2')}</MenubarTrigger>

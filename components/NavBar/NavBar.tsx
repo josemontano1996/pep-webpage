@@ -19,12 +19,15 @@ const NavBar = async ({ locale }: { locale: string }) => {
           <Image src={LogoImg} alt="Logo Image" className="h-12 w-auto" />
         </LocaleLink>
       </h1>
-      <ul className="flex flex-1 items-center justify-end gap-6">
-        <li>
+      <ul className="flex flex-1 items-center justify-end gap-6 ">
+        <li className="hidden lg:flex">
           {/* TODO: change to button an create contact form */}
           <LocaleLink
             path="/contact"
-            styling={cn(buttonVariants({ variant: 'ghost' }))}
+            styling={cn(
+              buttonVariants({ variant: 'ghost' }),
+              'text-sm xl:text-lg',
+            )}
           >
             {t('right-nav-contact')}
           </LocaleLink>
@@ -32,7 +35,10 @@ const NavBar = async ({ locale }: { locale: string }) => {
         <li>
           <LocaleLink
             path={'/donate'}
-            styling={cn(buttonVariants({ variant: 'destructive' }))}
+            styling={cn(
+              buttonVariants({ variant: 'destructive' }),
+              'text-sm xl:text-lg',
+            )}
           >
             {t('right-nav-donate')}
           </LocaleLink>
