@@ -10,17 +10,17 @@ import umweltImg from '@/public/imgs/umwelt2.jpg';
 const ClimateHomeSection = () => {
   return (
     <div className="flex flex-col justify-between space-y-7">
-      <h4 className="flex items-center gap-2 text-3xl font-medium text-green-500 lg:justify-end">
+      <div className="mx-auto flex items-center gap-2 text-xl font-semibold text-green-500 sm:text-3xl lg:mx-0 lg:justify-end ">
         <span>
           <Trees />
         </span>
-        Für die Umwelt und Klimawandel{' '}
-      </h4>
-      <div className="gap-8 lg:flex">
-        <div>
+        <h4>Für die Umwelt und Klimawandel</h4>
+      </div>
+      <div className="gap-8 space-y-4 lg:flex lg:space-y-0">
+        <div className="my-auto flex-1">
           <Image src={umweltImg} alt={'umwelt img'} className="rounded-xl" />
         </div>
-        <div className="flex flex-col items-center justify-between space-y-4">
+        <div className="flex flex-1 flex-col items-center justify-between space-y-4 sm:text-lg lg:text-left">
           <p>
             <span className="font-semibold text-primary">
               {' '}
@@ -35,7 +35,7 @@ const ClimateHomeSection = () => {
             </span>
             Die Reduktion der CO2-Emissionen wird dafür nicht reichen, man
             braucht eine aktive Entnahme von Kohlendioxid aus der Atmosphäre.
-            Darüber besteht Einigkeit in der Wissenschaft. {' '}
+            Darüber besteht Einigkeit in der Wissenschaft.{' '}
             <span className="xl:hidden">
               <ReadMore />
             </span>

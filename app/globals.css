@@ -6,12 +6,17 @@
   animation: fade-in-out;
   animation-duration: 3.6s;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 @keyframes fade-in-out {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0;
   }
-  20% ,75%{
+  20%,
+  75% {
     opacity: 1;
   }
 }

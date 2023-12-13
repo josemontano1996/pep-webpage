@@ -1,9 +1,4 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  DialogTrigger,
-} from './ui/dialog';
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from './ui/dialog';
 import LocaleLink from './translations/LocaleLink';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from './ui/button';
@@ -11,14 +6,23 @@ import { buttonVariants } from './ui/button';
 const ReadMore = () => {
   return (
     <Dialog>
-      <DialogTrigger className="italic hover:cursor-pointer hover:underline text-red-500">
+      <DialogTrigger className="italic text-red-500 hover:cursor-pointer hover:underline">
         mehr lesen
       </DialogTrigger>
       <DialogContent className="max-h-[80vh] max-w-[80vw] overflow-auto bg-lime-100 ">
         <DialogTitle className="capitalize">
           ERDERWÄRMUNG UND KLIMAKRISE
         </DialogTitle>
-
+        <p className=" xl:hidden">
+          Wir wollen durch{' '}
+          <span className="font-bold">
+            Aufforstung zur aktiven Entnahme von Kohlendioxid aus der Atmosphäre
+          </span>{' '}
+          beitragen, und dadurch die negative Auswirkungen der Klimakrise
+          weltweit abmildern. Damit verbessern wir auch die wirtschaftliche,
+          soziale und ökologische Bedingungen der Familien, die sich direkt an
+          den Projekt beteiligen, aber auch deren der Nachbarschaft.
+        </p>
         <p>
           Gletscher gehen immer weiter zurück, das Eis in den Polarregionen
           schmilzt, während der Meeresspiegel ansteigt. Hitzeextreme, Dürren,

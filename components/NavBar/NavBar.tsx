@@ -10,16 +10,20 @@ import LeftNav from './LeftNavBar';
 const NavBar = async ({ locale }: { locale: string }) => {
   const { t } = await initTranslations(locale, ['shared']);
   return (
-    <header className="sticky top-0 z-50 flex items-center bg-white px-[3vw] py-1">
+    <header className="sticky top-0 z-50 flex items-center bg-white py-2 lg:px-[3vw]">
       <nav className="flex-1">
         <LeftNav />
       </nav>
       <h1>
         <LocaleLink path={'/'}>
-          <Image src={LogoImg} alt="Logo Image" className="h-12 w-auto" />
+          <Image
+            src={LogoImg}
+            alt="Logo Image"
+            className=" h-10 w-auto sm:h-12"
+          />
         </LocaleLink>
       </h1>
-      <ul className="flex flex-1 items-center justify-end gap-6 ">
+      <ul className="flex flex-1 items-center justify-end gap-6 pr-[2vw] lg:p-0">
         <li className="hidden lg:flex">
           {/* TODO: change to button an create contact form */}
           <LocaleLink
@@ -37,13 +41,13 @@ const NavBar = async ({ locale }: { locale: string }) => {
             path={'/donate'}
             styling={cn(
               buttonVariants({ variant: 'destructive' }),
-              'text-sm xl:text-lg',
+              'text-sm xl:text-lg text-xs sm:text-base',
             )}
           >
             {t('right-nav-donate')}
           </LocaleLink>
         </li>
-        <li>
+        <li className="hidden sm:block">
           <LocaleSelector />
         </li>
       </ul>

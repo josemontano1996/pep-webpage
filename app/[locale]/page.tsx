@@ -4,13 +4,8 @@ import initTranslations from '@/lib/i18n';
 
 import heroImage from '@/public/imgs/heroImg-min.jpg';
 import sustainabilityImg from '@/public/imgs/sustainability-leaf.jpg';
-import healthImg from '@/public/imgs/gesundheitmain.png';
 
 import MaxWidthWrapper from '@/components/Wrappers/MaxWidthWrapper';
-import { HeartPulse } from 'lucide-react';
-import LocaleLink from '@/components/translations/LocaleLink';
-import { cn } from '@/lib/utils';
-import { buttonVariants } from '@/components/ui/button';
 import ClimateHomeSection from '@/components/home-page/ClimateHomeSection';
 import HealthHomeSection from '@/components/home-page/HealthHomeSection';
 
@@ -42,8 +37,7 @@ export default async function HomePage({ params: { locale } }: Props) {
           className="object-cover"
         />
         <div className="absolute top-1/4 translate-y-[-60%] transform text-center">
-          <h1 className="flex w-screen justify-center text-5xl font-extrabold text-white ">
-            {' '}
+          <h1 className="flex w-screen justify-center text-5xl font-bold text-white ">
             {t('hero-title')}
           </h1>
         </div>
@@ -51,11 +45,11 @@ export default async function HomePage({ params: { locale } }: Props) {
       <div className="flex flex-col justify-center">
         <section className="mt-20">
           <MaxWidthWrapper>
-            <article>
-              <h2 className="mb-8 text-center text-4xl font-semibold">
+            <article id="about">
+              <h2 className="mb-8 text-center text-3xl font-semibold sm:text-4xl">
                 WER SIND WIR?
               </h2>
-              <p className="text-center text-xl">
+              <p className="text-center sm:text-xl">
                 PEP e. V.{' '}
                 <span className="font-semibold text-primary">{`(${t(
                   's1-pep-long',
@@ -67,19 +61,22 @@ export default async function HomePage({ params: { locale } }: Props) {
               </p>
             </article>
           </MaxWidthWrapper>
-          <article className="relative my-20 ml-[10vw] max-w-[90vw] bg-lime-100 pt-20">
-            <h4 className="absolute left-1/2 top-3 mb-8 -translate-x-1/2 transform text-center text-4xl">
+          <article
+            id="goals"
+            className="relative my-20 bg-lime-100 pt-4 sm:ml-[10vw] sm:max-w-[90vw] xl:pt-20"
+          >
+            <h4 className="mb-8 transform text-center text-4xl xl:absolute xl:left-1/2 xl:top-3 xl:-translate-x-1/2">
               {t('s1-t2')}
             </h4>
-            <div className="w-[80vw] grid-cols-2  justify-items-center gap-10 xl:grid">
-              <div className="w-4/5 flex-col justify-end xl:flex xl:h-full xl:w-full">
+            <div className="grid-cols-2 justify-items-center gap-10 sm:w-[80vw] xl:grid">
+              <div className="sm:w-4/5 xl:flex xl:h-full xl:w-full xl:flex-col xl:justify-end">
                 <Image
                   src={sustainabilityImg}
                   alt={'sustainability image'}
                   className="object-cover"
                 />
               </div>
-              <div className="flex-col justify-end space-y-4 p-6 xl:my-auto xl:p-0 xl:pb-2">
+              <div className="flex-col justify-end space-y-4 p-6 text-center sm:text-left sm:text-lg xl:my-auto xl:p-0 xl:pb-2">
                 <p>
                   Unsere Arbeit dreht sich um Unsere Arbeit dreht sich um die{' '}
                   <span className="font-semibold text-primary">
@@ -118,7 +115,10 @@ export default async function HomePage({ params: { locale } }: Props) {
         </section>
         <MaxWidthWrapper>
           <section>
-            <h2 className="mb-10 text-center text-4xl font-semibold">
+            <h2
+              id="projects"
+              className="mb-10 text-center text-3xl font-semibold sm:text-4xl"
+            >
               Was machen wir?
             </h2>
             <div className="flex flex-col space-y-16">
