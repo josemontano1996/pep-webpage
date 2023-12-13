@@ -4,15 +4,14 @@ import Image3 from '../public/imgs/health/health-image-3.jpg';
 import Image4 from '../public/imgs/health/health-image-4.jpg';
 import Image5 from '../public/imgs/health/health-image-5.jpg';
 import Image6 from '../public/imgs/health/health-image-6.jpg';
-import Image7 from '../public/imgs/health/health-image-7.jpg';
 import Image8 from '../public/imgs/health/health-image-8.jpg';
 import Image9 from '../public/imgs/health/health-image-9.jpg';
 import Image10 from '../public/imgs/health/health-image-10.jpg';
 import Image11 from '../public/imgs/health/health-image-11.jpg';
 import Image12 from '../public/imgs/health/groupImage.jpg';
 
-
 import Oxigen1 from '../public/imgs/health/oxigen-plant/oxigen-plant-1.png';
+import Oxigen2 from '../public/imgs/health/oxigen-plant/oxigen-plant-2.png';
 import Oxigen3 from '../public/imgs/health/oxigen-plant/oxigen-plant-3.png';
 
 export const chirurgicImages = [
@@ -34,9 +33,7 @@ export const chirurgicImages = [
   {
     img: Image6,
   },
-  {
-    img: Image7,
-  },
+
   {
     img: Image8,
   },
@@ -57,6 +54,9 @@ export const chirurgicImages = [
 export const oxigenPlantImages = [
   {
     img: Oxigen1,
+  },
+  {
+    img: Oxigen2,
   },
 
   {

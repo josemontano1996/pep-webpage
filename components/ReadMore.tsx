@@ -25,10 +25,10 @@ const ReadMore = () => {
           Starkniederschläge, Überschwemmungen, sowie tropische Wirbelstürme
           nehmen zu.{' '}
           <span className="font-bold">
-            Man spricht von Klimawandel und humanitäre Krise dieser droht die
+            Man spricht von Klimawandel und humanitäre Krise. Dieser droht die
             Existenzgrundlagen der globalen Gesellschaft
           </span>{' '}
-          , denn negativ zu beeinflussen oder sogar zu zerstören.
+          , negativ zu beeinflussen oder sogar zu zerstören.
         </p>
         <p>
           Südamerika ist besonders bedroht von klimatischen Veränderungen wie

@@ -6,8 +6,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 type Props = {
   images: { img: any }[];
   alt: string;
-  height: number;
-  width: number;
+  height?: number;
+  width?: number;
   animation?: string;
 };
 
@@ -47,7 +47,6 @@ const SlideShow = ({ images, alt, height, width, animation }: Props) => {
 
   useEffect(() => {
     let intervalId: NodeJS.Timeout | null = null;
-
     const slideHandler = () => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
     };
@@ -70,13 +69,17 @@ const SlideShow = ({ images, alt, height, width, animation }: Props) => {
       {images.map(
         (image, i) =>
           i === currentSlide && (
-            <div key={i} className={`w-[85%] h-[${height}] w-[${width}]`}>
+            <div key={i} className={`flex w-[85%] flex-col items-center`}>
+              <div style={{ height: `${height}px`, width: `${width}px` }}>
               <Image
                 src={image.img}
                 alt={alt}
                 loading="eager"
-                className={`object-cover ${isAuto ? animation : ''}`}
-              />
+                className={`object-cover inline-block ${
+                  isAuto ? animation : ''
+                }`}
+                />
+                </div>
             </div>
           ),
       )}

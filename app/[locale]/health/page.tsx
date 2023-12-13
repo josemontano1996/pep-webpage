@@ -44,8 +44,7 @@ const page = () => {
             <SlideShow
               images={chirurgicImages}
               alt={''}
-              height={500}
-              width={700}
+              width={550}
               animation="fade-in-out-slider"
             />
           </div>
@@ -62,7 +61,6 @@ const page = () => {
             <SlideShow
               images={oxigenPlantImages}
               alt={''}
-              height={500}
               width={650}
               animation="fade-in-out-slider"
             />

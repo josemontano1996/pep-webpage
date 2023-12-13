@@ -1,6 +1,8 @@
 'use client';
-import { Card, CardDescription, CardHeader, CardTitle } from '../ui/card';
-import StripeSelect from './StripeSelect';
+import { cn } from '@/lib/utils';
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card';
+import { buttonVariants } from '../ui/button';
+
 
 const StripeDonation = () => {
   return (
@@ -19,9 +21,17 @@ const StripeDonation = () => {
           you can safely either make a single or recurring donation.
         </CardDescription>
       </CardHeader>
-      <StripeSelect />
+      <CardFooter className="flex flex-col items-center">
+        <a
+          className={cn(buttonVariants())}
+          href={process.env.NEXT_PUBLIC_STRIPE_LINK}
+        >
+          Online Donation
+        </a>
+      </CardFooter>
     </Card>
   );
 };
+   
 
 export default StripeDonation;

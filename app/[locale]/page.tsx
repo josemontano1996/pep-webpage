@@ -174,7 +174,7 @@ export default async function HomePage({ params: { locale } }: Props) {
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-10 space-y-7">
+              <div className="grid grid-cols-2 gap-10 space-y-7 pb-16">
                 <div className="flex flex-col justify-between space-y-7">
                   <h4 className="flex items-center gap-2 text-3xl font-medium text-rose-500">
                     <span>
@@ -217,47 +217,6 @@ export default async function HomePage({ params: { locale } }: Props) {
                 </div>
                 <div className="my-auto">
                   <Image src={healthImg} alt={''} />
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-10 space-y-7">
-                <div className="my-auto">
-                  <Image src={educationImg} alt={''} className="rounded-xl" />
-                </div>
-                <div className="flex flex-col justify-between space-y-7">
-                  <h4 className="flex items-center gap-2 text-3xl font-medium text-blue-600">
-                    <span>
-                      <Trees />
-                    </span>
-                    Für die Bildung und Kultur
-                  </h4>
-                  <p className=" mb-6 mt-3">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Omnis dolor quae molestiae, placeat optio dignissimos est
-                    laudantium provident itaque ea voluptate iste consequatur
-                    consectetur rem aperiam quisquam quasi blanditiis beatae.
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Officia, vitae voluptates dolorem reiciendis porro tenetur
-                    obcaecati, dignissimos facilis ratione distinctio
-                    reprehenderit veritatis et sequi ex optio odit aut, dolorum
-                    qui. Lorem ipsum, dolor sit amet consectetur adipisicing
-                    elit. Voluptatibus quibusdam distinctio, enim et at
-                    provident error aut dolore dignissimos possimus ratione
-                    magni explicabo. Ullam repellat nihil expedita iure minima
-                    vitae!
-                  </p>
-                  <div className="mt-3 text-center">
-                    <LocaleLink
-                      path="/culture"
-                      styling={cn(
-                        buttonVariants({ size: 'lg' }),
-                        'bg-blue-600 hover:bg-blue-600/70',
-                      )}
-                    >
-                      weitere Informationen
-                    </LocaleLink>
-                  </div>
                 </div>
               </div>
             </div>

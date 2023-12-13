@@ -10,7 +10,7 @@ import { CopyButton } from './CopyButton';
 
 export default function DonationCard() {
   return (
-    <Card className="w-[350px]">
+    <Card className="w-[350px] flex flex-col justify-between">
       <CardHeader>
         <CardTitle className="mb-2">Bank Transfer</CardTitle>
         <CardDescription>

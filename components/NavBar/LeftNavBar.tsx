@@ -27,9 +27,11 @@ export default function LeftNav() {
         <MenubarMenu>
           <MenubarTrigger> {t('left-nav-title-3')}</MenubarTrigger>
           <MenubarContent>
-            <MenubarItem>{t('left-nav-subtitle-3-1')}</MenubarItem>
-            <MenubarItem>{t('left-nav-subtitle-3-2')}</MenubarItem>
-            <MenubarItem>{t('left-nav-subtitle-3-3')}</MenubarItem>
+            <MenubarItem>
+              <a href="/pdf/freistellungsbescheid-2021.pdf" target="_blank">
+                Gemeinnützigkeit
+              </a>
+            </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
       </Menubar>
