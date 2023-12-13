@@ -46,7 +46,7 @@ const page = () => {
               alt={''}
               height={500}
               width={700}
-             /*  animation="fade-in-out-slider" */
+              animation="fade-in-out-slider"
             />
           </div>
         </div>
@@ -64,7 +64,7 @@ const page = () => {
               alt={''}
               height={500}
               width={650}
-             /*  animation="fade-in-out-slider" */
+              animation="fade-in-out-slider"
             />
           </div>
           <div className="col-span-5 my-auto space-y-6">

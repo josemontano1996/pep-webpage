@@ -69,17 +69,13 @@ const SlideShow = ({ images, alt, height, width, animation }: Props) => {
   return (
     <div className="flex w-full select-none items-center justify-between gap-4 ease-in-out">
       <ChevronLeft onClick={() => stopAutoSlide('backwards')} />
-
       {images.map(
         (image, i) =>
           i === currentSlide && (
-            <div key={i}>
+            <div key={i} className='w-[85%]'>
               <Image
-                width={width}
-                height={height}
                 src={image.img}
                 alt={alt}
-                loading='eager'
                 className={`object-cover ${isAuto ? animation : ''}`}
               />
             </div>
