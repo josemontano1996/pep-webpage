@@ -70,11 +70,11 @@ const SlideShow = ({ images, alt, height, width, animation }: Props) => {
       {images.map(
         (image, i) =>
           i === currentSlide && (
-            <div key={i} className='w-[85%]'>
+            <div key={i} className={`w-[85%] h-[${height}] w-[${width}]`}>
               <Image
                 src={image.img}
                 alt={alt}
-                loading='eager'
+                loading="eager"
                 className={`object-cover ${isAuto ? animation : ''}`}
               />
             </div>
