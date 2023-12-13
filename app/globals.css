@@ -4,7 +4,7 @@
 
 .fade-in-out-slider {
   animation: fade-in-out;
-  animation-duration: 3.5s;
+  animation-duration: 3.6s;
 }
 
 @keyframes fade-in-out {
