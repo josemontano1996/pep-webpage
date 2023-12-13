@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useRef, MutableRefObject } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -15,8 +15,6 @@ const SlideShow = ({ images, alt, height, width, animation }: Props) => {
   const [isMounted, setisMounted] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAuto, setIsAuto] = useState(true);
-
-  const intervalRef: MutableRefObject<NodeJS.Timeout | null> = useRef(null);
 
   const nextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
@@ -76,6 +74,7 @@ const SlideShow = ({ images, alt, height, width, animation }: Props) => {
               <Image
                 src={image.img}
                 alt={alt}
+                loading='eager'
                 className={`object-cover ${isAuto ? animation : ''}`}
               />
             </div>
