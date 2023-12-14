@@ -1,12 +1,11 @@
 import Image from 'next/image';
-import { cn } from '@/lib/utils';
+
 import MaxWidthWrapper from '@/components/Wrappers/MaxWidthWrapper';
 import mapPhoto from '@/public/imgs/map-cajamarca.jpg';
 import viveroPhoto from '@/public/imgs/vivero.jpg';
 import hoyacionPhoto from '@/public/imgs/hoyacion.jpg';
+import hoyacionPhoto2 from '@/public/imgs/hoyacion-2.jpg';
 import ventajasSociales from '@/public/imgs/ventajassociales.jpg';
-import { buttonVariants } from '@/components/ui/button';
-import LocaleLink from '@/components/translations/LocaleLink';
 import DonateCallToAction from '@/components/DonateCallToAction';
 
 const ClimatePage = () => {
@@ -14,12 +13,12 @@ const ClimatePage = () => {
     <MaxWidthWrapper>
       <section className="space-y-14 py-10">
         <div>
-          <h2 className="text-center text-5xl font-medium">
+          <h2 className="text-center text-3xl sm:text-5xl font-medium">
             AUFORSTUNGSPROJEKT IN CAJAMARCA
           </h2>
         </div>
-        <div className="flex h-[70vh] gap-8">
-          <div className="flex flex-col justify-between">
+        <div className="flex  gap-8">
+          <div className="flex flex-col justify-between space-y-6">
             <div>
               <h3 className="mb-1 text-2xl">ZIELE</h3>
               <p>
@@ -28,14 +27,26 @@ const ClimatePage = () => {
                 100.000 Bäume gepflanzt.
               </p>
             </div>
-            <div>
-              <h3 className="mb-1 text-2xl">ORT</h3>
-              <div>
+            <div className="sm:flex space-y-2 sm:items-center sm:justify-between lg:block">
+              <div className="flex-1">
+                <h3 className="mb-1 text-2xl">ORT</h3>
                 <p>Gemeinde: Mutisch</p>
                 <p>Bezirk: El Prado</p>
                 <p>Provinz: San Miguel de Pallaques</p>
                 <p>Departament: Cajamarca</p>
                 <p>Land: Peru</p>
+              </div>
+              <div className="flex-1 lg:hidden lg:h-full">
+                <a
+                  href="https://en.wikipedia.org/wiki/Department_of_Cajamarca#/media/File:Peru_-_Cajamarca_Department_(locator_map).svg"
+                  target="_blank"
+                >
+                  <Image
+                    src={mapPhoto}
+                    alt={'cajamarca map'}
+                    className="h-[50vh] object-cover"
+                  />
+                </a>
               </div>
             </div>
 
@@ -49,7 +60,7 @@ const ClimatePage = () => {
               </p>
             </div>
           </div>
-          <div className=" h-full">
+          <div className="hidden h-full items-center lg:flex">
             <a
               href="https://en.wikipedia.org/wiki/Department_of_Cajamarca#/media/File:Peru_-_Cajamarca_Department_(locator_map).svg"
               target="_blank"
@@ -59,7 +70,7 @@ const ClimatePage = () => {
           </div>
         </div>
       </section>
-      <section className=" space-y-6 pb-12 pt-14">
+      <section className="space-y-6 pb-12 pt-14">
         <h3 className="text-2xl">PROJEKTVORTEILE</h3>
 
         <div>
@@ -76,9 +87,12 @@ const ClimatePage = () => {
           </p>
         </div>
         <div>
-          <h5 className="mb-1 text-xl">SOZIALE VORTEILE</h5>
-          <div className="grid grid-cols-12 items-center gap-8">
-            <div className="col-span-6">
+          <h5 className="mb-2 text-xl">SOZIALE VORTEILE</h5>
+          <div className="lg:grid lg:grid-cols-12 lg:items-center lg:gap-8">
+            <div className="space-y-4 lg:col-span-6">
+              <div className="col-span-6 lg:hidden">
+                <Image src={ventajasSociales} alt="" className="rounded-xl" />
+              </div>
               <p>
                 Ziel des Projekts ist auch, die Lebensbedingungen der
                 betroffenen Bevölkerung zu verbessern. Der Wald versorgt sie mit
@@ -97,7 +111,7 @@ const ClimatePage = () => {
                 organisieren, ausbilden und zusammenarbeiten müssen.
               </p>
             </div>
-            <div className="col-span-6">
+            <div className="hidden lg:col-span-6 lg:block">
               <Image src={ventajasSociales} alt="" className="rounded-xl" />
             </div>
           </div>
@@ -131,10 +145,13 @@ const ClimatePage = () => {
             einheimischer Urwälder mitwirken.
           </p>
         </div>
-        <div className="grid grid-cols-12 items-center gap-6">
-          <div className="col-span-6 space-y-4">
-            <div>
+        <div className="items-center lg:grid lg:grid-cols-12 lg:gap-6">
+          <div className="space-y-4 lg:col-span-6">
+            <div className="space-y-4">
               <h5 className="mb-1 text-xl">AUSWAHL DER BAUMART</h5>
+              <div className="col-span-6 block lg:hidden">
+                <Image src={viveroPhoto} alt="" className="rounded-xl" />
+              </div>
               <p>
                 Baumart: Radiata-Kiefer{' '}
                 <span className="italic">Pinus radiata.</span>
@@ -165,17 +182,24 @@ const ClimatePage = () => {
               </p>
             </div>
           </div>
-          <div className="col-span-6">
+          <div className="col-span-6 hidden lg:block">
             <Image src={viveroPhoto} alt="" className="rounded-xl" />
           </div>
         </div>
-        <div className="grid grid-cols-12 gap-6 py-10">
-          <div className="col-span-4">
+        <div className="py-10 lg:grid lg:grid-cols-12 lg:gap-6">
+          <div className="hidden lg:col-span-4 lg:flex lg:items-center">
             <Image src={hoyacionPhoto} alt="" className="rounded-xl" />
           </div>
           <div className="col-span-8 flex flex-col justify-between space-y-4">
-            <div>
+            <div className="space-y-4">
               <h3 className="mb-1 text-2xl">PFLANZUNG</h3>
+              <div className="col-span-4 lg:hidden ">
+                <Image
+                  src={hoyacionPhoto2}
+                  alt=""
+                  className="h-[80vh] rounded-xl object-cover"
+                />
+              </div>
               <p>
                 Nach der Schulung reinigen die Begünstigten das Land und führen
                 Markierungen und Gräben in den angegebenen Maßen und mit den
@@ -207,7 +231,7 @@ const ClimatePage = () => {
                 Das Projekt wird ausschließlich durch Spenden finanziert. Wir
                 benötigen Ihre wertvolle Unterstützung.
               </p>
-             <DonateCallToAction/>
+              <DonateCallToAction />
             </div>
           </div>
         </div>
