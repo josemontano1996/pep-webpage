@@ -4,15 +4,15 @@ import { chirurgicImages, oxigenPlantImages } from '@/consts/health-page';
 
 const page = () => {
   return (
-    <div className="max-w-screen-[1350px] mx-auto w-full px-[2.5] md:px-20">
-      <section className="space-y-14 py-10">
+    <div className="max-w-screen-[1350px] mx-auto w-full px-[5vw] md:px-[3vw]">
+      <section id='surgery' className="space-y-14 py-10">
         <div>
-          <h2 className="text-center text-5xl font-medium">
+          <h2 className="text-center text-2xl font-medium sm:text-5xl">
             REKONSTRUKTIVE CHIRURGIE
           </h2>
         </div>
-        <div className="grid grid-cols-12 items-center gap-8">
-          <div className="col-span-6 space-y-4">
+        <div className="flex flex-col items-center gap-8 xl:grid-cols-12 xl:flex-row">
+          <div className="order-2 space-y-6 xl:order-1 xl:flex-1">
             <p>
               Seit unserer Gründung haben wir in Zusammenarbeit mit INTERPLAST
               Germany und anderen Institutionen medizinische Einsätze in Peru
@@ -40,28 +40,27 @@ const page = () => {
             </p>
             <DonateCallToAction />
           </div>
-          <div className="col-span-6">
+          <div className="order-1 mx-auto lg:w-4/5 xl:order-2 xl:w-full xl:flex-1">
             <SlideShow
+              priority={true}
               images={chirurgicImages}
               alt={''}
-              width={550}
               animation="fade-in-out-slider"
             />
           </div>
         </div>
       </section>
-      <section className="space-y-14 py-10">
+      <section id='oxigen' className="space-y-14 py-10">
         <div>
-          <h2 className="text-center text-5xl font-medium">
+          <h2 className="text-center text-2xl font-medium sm:text-5xl">
             SAUERSTOFFANLAGE FÜR CAJAMARCA
           </h2>
         </div>
-        <div className="grid grid-cols-12 gap-8">
-          <div className="col-span-7">
+        <div className="items-center gap-8 space-y-6 lg:grid lg:grid-cols-12 lg:space-y-0">
+          <div className="lg:col-span-7">
             <SlideShow
               images={oxigenPlantImages}
               alt={''}
-              width={650}
               animation="fade-in-out-slider"
             />
           </div>

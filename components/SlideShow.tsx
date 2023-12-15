@@ -6,12 +6,11 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 type Props = {
   images: { img: any }[];
   alt: string;
-  height?: number;
-  width?: number;
+  priority?: boolean;
   animation?: string;
 };
 
-const SlideShow = ({ images, alt, height, width, animation }: Props) => {
+const SlideShow = ({ images, alt, animation, priority = false }: Props) => {
   const [isMounted, setisMounted] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAuto, setIsAuto] = useState(true);
@@ -69,17 +68,18 @@ const SlideShow = ({ images, alt, height, width, animation }: Props) => {
       {images.map(
         (image, i) =>
           i === currentSlide && (
-            <div key={i} className={`flex w-[85%] flex-col items-center`}>
-              <div style={{ height: `${height}px`, width: `${width}px` }}>
-              <Image
-                src={image.img}
-                alt={alt}
-                loading="eager"
-                className={`object-cover inline-block ${
-                  isAuto ? animation : ''
-                }`}
+            <div key={i} className={`w-[90%]`}>
+              <div>
+                <Image
+                  src={image.img}
+                  alt={alt}
+                  priority={priority}
+                  loading="eager"
+                  className={`inline-block object-cover ${
+                    isAuto ? animation : ''
+                  }`}
                 />
-                </div>
+              </div>
             </div>
           ),
       )}

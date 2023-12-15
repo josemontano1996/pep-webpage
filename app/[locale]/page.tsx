@@ -37,7 +37,7 @@ export default async function HomePage({ params: { locale } }: Props) {
           className="object-cover"
         />
         <div className="absolute top-1/4 translate-y-[-60%] transform text-center">
-          <h1 className="flex w-screen justify-center text-5xl font-bold text-white ">
+          <h1 className="flex w-screen justify-center text-4xl sm:text-5xl font-bold text-white ">
             {t('hero-title')}
           </h1>
         </div>

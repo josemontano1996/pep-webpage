@@ -7,7 +7,7 @@ const DonateCallToAction = () => {
     <div className="my-4 flex justify-center">
       <LocaleLink
         path={'/donate'}
-        styling={cn(buttonVariants({ variant: 'destructive' }))}
+        styling={cn(buttonVariants({ variant: 'destructive' }),'inline-block')}
       >
         Jetzt Spenden
       </LocaleLink>
