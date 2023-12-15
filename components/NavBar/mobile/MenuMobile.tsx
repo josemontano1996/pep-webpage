@@ -1,5 +1,4 @@
-import { Menu } from 'lucide-react';
-
+import Link from 'next/link';
 import {
   Menubar,
   MenubarContent,
@@ -14,8 +13,9 @@ import { cn } from '@/lib/utils';
 import MobileNavbarIndexProvider from './MobileNavBarIndexProvider';
 import LocaleLink from '@/components/LocaleLink';
 import LocaleSelector from '@/components/translations/LocaleSelector';
+import { Menu } from 'lucide-react';
 
-const MobileMenu = () => {
+const MenuMobile = ({ locale }: { locale: string }) => {
   return (
     <Menubar className={cn('lg:hidden')}>
       <MenubarMenu>
@@ -27,11 +27,11 @@ const MobileMenu = () => {
           <MenubarSub>
             <MenubarSubTrigger>Was machen wir?</MenubarSubTrigger>
             <MenubarSubContent>
-              <MenubarItem>
-                <LocaleLink path="/climate">Für die Umwelt</LocaleLink>
+              <MenubarItem asChild>
+                <Link href={`/${locale}/climate`}>Für die Umwelt</Link>
               </MenubarItem>
-              <MenubarItem>
-                <LocaleLink path="/health">Für die Gesundheit</LocaleLink>
+              <MenubarItem asChild>
+                <Link href={`/${locale}/health`}>Für die Gesundheit</Link>
               </MenubarItem>
             </MenubarSubContent>
           </MenubarSub>
@@ -45,6 +45,10 @@ const MobileMenu = () => {
               </MenubarItem>
             </MenubarSubContent>
           </MenubarSub>
+          <MenubarItem>
+            {/* TODO:IMPLEMENT EMAIL SENDING DIALOG */}
+            Kontakt
+          </MenubarItem>
           <MenubarSub>
             <div className="flex flex-col items-center pt-2 sm:hidden">
               <LocaleSelector />
@@ -56,4 +60,4 @@ const MobileMenu = () => {
   );
 };
 
-export default MobileMenu;
+export default MenuMobile;

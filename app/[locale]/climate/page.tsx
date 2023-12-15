@@ -13,11 +13,11 @@ const ClimatePage = () => {
     <MaxWidthWrapper>
       <section className="space-y-14 py-10">
         <div>
-          <h2 className="text-center text-3xl sm:text-5xl font-medium">
+          <h2 className="text-center text-3xl font-medium sm:text-5xl">
             AUFORSTUNGSPROJEKT IN CAJAMARCA
           </h2>
         </div>
-        <div className="flex  gap-8">
+        <div id="objectives" className="flex  gap-8">
           <div className="flex flex-col justify-between space-y-6">
             <div>
               <h3 className="mb-1 text-2xl">ZIELE</h3>
@@ -27,7 +27,7 @@ const ClimatePage = () => {
                 100.000 Bäume gepflanzt.
               </p>
             </div>
-            <div className="sm:flex space-y-2 sm:items-center sm:justify-between lg:block">
+            <div className="space-y-2 sm:flex sm:items-center sm:justify-between lg:block">
               <div className="flex-1">
                 <h3 className="mb-1 text-2xl">ORT</h3>
                 <p>Gemeinde: Mutisch</p>
@@ -70,7 +70,7 @@ const ClimatePage = () => {
           </div>
         </div>
       </section>
-      <section className="space-y-6 pb-12 pt-14">
+      <section id="advantajes" className="space-y-6 pb-12 pt-14">
         <h3 className="text-2xl">PROJEKTVORTEILE</h3>
 
         <div>
@@ -131,7 +131,7 @@ const ClimatePage = () => {
           </p>
         </div>
       </section>
-      <section className="space-y-6">
+      <section id="planting" className="space-y-6">
         <div>
           <h3 className="mb-1 text-2xl">ANPFLANZUNG</h3>
           <p>

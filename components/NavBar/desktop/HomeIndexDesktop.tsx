@@ -5,10 +5,8 @@ import {
   MenubarMenu,
   MenubarTrigger,
 } from '../../ui/menubar';
-import { useTranslation } from 'react-i18next';
 
-const DesktopHomeIndex = () => {
-  const { t } = useTranslation();
+const HomeIndexDesktop = () => {
   return (
     <>
       <MenubarMenu>
@@ -33,4 +31,4 @@ const DesktopHomeIndex = () => {
   );
 };
 
-export default DesktopHomeIndex;
+export default HomeIndexDesktop;

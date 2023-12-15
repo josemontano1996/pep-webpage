@@ -1,13 +1,14 @@
 'use client';
 
-import MobileMenu from './mobile/MobileMenu';
-import DesktopMenu from './desktop/DesktopMenu';
+import MenuDesktop from './desktop/MenuDesktop';
+import MobileMenu from './mobile/MenuMobile';
 
-export default function LeftNav() {
+
+export default function LeftNav({ locale }: { locale: string }) {
   return (
     <>
-      <DesktopMenu />
-      <MobileMenu />
+      <MenuDesktop locale={locale} />
+      <MobileMenu locale={locale} />
     </>
   );
 }

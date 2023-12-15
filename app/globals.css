@@ -16,7 +16,7 @@ html {
     opacity: 0;
   }
   20%,
-  75% {
+  90% {
     opacity: 1;
   }
 }

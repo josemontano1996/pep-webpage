@@ -1,3 +1,4 @@
+import { SmoothScrollLink } from '@/components/SmoothScrollToIdElement';
 import {
   MenubarItem,
   MenubarSub,
@@ -5,20 +6,24 @@ import {
   MenubarSubTrigger,
 } from '@/components/ui/menubar';
 
-const MobileHomeIndex = () => {
+const HomeIndexMobile = () => {
   return (
     <>
       <MenubarSub>
         <MenubarSubTrigger>Wer sind wir?</MenubarSubTrigger>
         <MenubarSubContent>
           <MenubarItem>
-            <a href="#about">Über uns</a>
+            <SmoothScrollLink scrollToId="about">Über uns</SmoothScrollLink>
           </MenubarItem>
           <MenubarItem>
-            <a href="#goals">Was bewegt uns?</a>
+            <SmoothScrollLink scrollToId="goals">
+              Was bewegt uns?
+            </SmoothScrollLink>
           </MenubarItem>
           <MenubarItem>
-            <a href="#projects">Was machen wir?</a>
+            <SmoothScrollLink scrollToId="projects">
+              Was machen wir?
+            </SmoothScrollLink>
           </MenubarItem>
         </MenubarSubContent>
       </MenubarSub>
@@ -26,4 +31,4 @@ const MobileHomeIndex = () => {
   );
 };
 
-export default MobileHomeIndex;
+export default HomeIndexMobile;

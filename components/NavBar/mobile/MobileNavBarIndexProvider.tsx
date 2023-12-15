@@ -1,16 +1,21 @@
 'use client';
 
 import { useParams, usePathname } from 'next/navigation';
-import DesktopHomeIndex from '../desktop/DesktopHomeIndex';
-import MobileHomeIndex from './MobileHomeIndex';
 
+import HomeIndexMobile from './HomeIndexMobile';
+import ClimateIndexMobile from './ClimateIndexMobile';
 
 const MobileNavbarIndexProvider = () => {
   const pathname = usePathname().split('/')[2] || '';
   const { locale } = useParams();
-  const url = `/${locale}${pathname}`;
-  console.log(url === `/${locale}`);
-  return <>{url === `/${locale}` ? <MobileHomeIndex /> : null}</>;
+  const url = `/${locale}/${pathname}`;
+
+  return (
+    <>
+      {url === `/${locale}/` && <HomeIndexMobile />}
+      {url === `/${locale}/climate` && <ClimateIndexMobile />}
+    </>
+  );
 };
 
 export default MobileNavbarIndexProvider;

@@ -10,9 +10,9 @@ import LeftNav from './LeftNavBar';
 const NavBar = async ({ locale }: { locale: string }) => {
   const { t } = await initTranslations(locale, ['shared']);
   return (
-    <header className="sticky top-0 z-50 flex items-center bg-white py-2 lg:px-[3vw]">
+    <header className="fixed left-0 top-0 z-50 flex w-screen h-[9vh] items-center bg-white py-2 lg:px-[3vw]">
       <nav className="flex-1">
-        <LeftNav />
+        <LeftNav locale={locale} />
       </nav>
       <h1>
         <LocaleLink path={'/'}>

@@ -17,6 +17,8 @@ export const SmoothScrollLink: FC<Props> = ({
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault(); // Prevent the default behavior of anchor element
     smoothScrollTo(scrollToId);
+    //I have to do this or the UI Menubar is not closing
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
   };
 
   return (

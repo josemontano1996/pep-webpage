@@ -7,20 +7,20 @@ import {
 } from '@/components/ui/menubar';
 import DesktopNavbarIndexProvider from './DesktopNavBarIndexProvider';
 import { cn } from '@/lib/utils';
-import LocaleLink from '@/components/LocaleLink';
+import Link from 'next/link';
 
-const DesktopMenu = () => {
+const MenuDesktop = ({ locale }: { locale: string }) => {
   return (
     <Menubar className={cn('hidden lg:flex')}>
       <DesktopNavbarIndexProvider />
       <MenubarMenu>
         <MenubarTrigger>Was machen wir?</MenubarTrigger>
         <MenubarContent>
-          <MenubarItem>
-            <LocaleLink path="/climate">Für die Umwelt</LocaleLink>
+          <MenubarItem asChild>
+            <Link href={`/${locale}/climate`}>Für die Umwelt</Link>
           </MenubarItem>
-          <MenubarItem>
-            <LocaleLink path="/health">Für die Gesundheit</LocaleLink>
+          <MenubarItem asChild>
+            <Link href={`/${locale}/health`}>Für die Gesundheit</Link>
           </MenubarItem>
         </MenubarContent>
       </MenubarMenu>
@@ -34,11 +34,9 @@ const DesktopMenu = () => {
           </MenubarItem>
         </MenubarContent>
       </MenubarMenu>
-      <MenubarMenu>
-        
-      </MenubarMenu>
+      <MenubarMenu></MenubarMenu>
     </Menubar>
   );
 };
 
-export default DesktopMenu;
+export default MenuDesktop;

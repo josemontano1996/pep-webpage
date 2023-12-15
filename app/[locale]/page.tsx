@@ -45,8 +45,11 @@ export default async function HomePage({ params: { locale } }: Props) {
       <div className="flex flex-col justify-center">
         <section className="mt-20">
           <MaxWidthWrapper>
-            <article id="about">
-              <h2 className="mb-8 text-center text-3xl font-semibold sm:text-4xl">
+            <article>
+              <h2
+                id="about"
+                className="mb-8 text-center text-3xl font-semibold sm:text-4xl"
+              >
                 WER SIND WIR?
               </h2>
               <p className="text-center sm:text-xl">
