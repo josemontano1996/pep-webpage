@@ -6,7 +6,7 @@ import { buttonVariants } from '../ui/button';
 
 const StripeDonation = () => {
   return (
-    <Card className="flex w-[350px] flex-col justify-between">
+    <Card id='online' className="flex flex-col h-full justify-between sm:w-[550px] xl:w-[350px]">
       <CardHeader>
         <CardTitle className="mb-2">Online Donation</CardTitle>
         <CardDescription>

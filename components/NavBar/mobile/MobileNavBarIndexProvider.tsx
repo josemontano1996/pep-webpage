@@ -6,6 +6,7 @@ import HomeIndexMobile from './HomeIndexMobile';
 import ClimateIndexMobile from './ClimateIndexMobile';
 import HealtIndexMobile from './HealtIndexMobile';
 
+
 const MobileNavbarIndexProvider = () => {
   const pathname = usePathname().split('/')[2] || '';
   const { locale } = useParams();
@@ -16,6 +17,7 @@ const MobileNavbarIndexProvider = () => {
       {url === `/${locale}/` && <HomeIndexMobile />}
       {url === `/${locale}/climate` && <ClimateIndexMobile />}
       {url === `/${locale}/health` && <HealtIndexMobile />}
+   
     </>
   );
 };

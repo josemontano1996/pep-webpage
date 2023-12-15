@@ -1,13 +1,10 @@
 'use client';
 
-import { ReactNode } from 'react';
-import { Button } from '../ui/button';
+import { Copy } from 'lucide-react';
 
-export const CopyButton = ({ children }: { children: ReactNode }) => {
+export const CopyButton = ({ copiedData }: { copiedData: string }) => {
   const copyToClipboard = async () => {
-    const accountData = document.getElementById('accountData');
-    const text = accountData!.textContent!;
-    await navigator.clipboard.writeText(text);
+    await navigator.clipboard.writeText(copiedData);
   };
-  return <Button onClick={copyToClipboard}>{children}</Button>;
+  return <Copy onClick={copyToClipboard} className='hover:cursor-pointer hover:bg-gray-100'/>;
 };

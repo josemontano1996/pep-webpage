@@ -1,7 +1,7 @@
 
 
 
-# Lucide License
+# Lucide Icons License
 
 ## ISC License
 

@@ -5,6 +5,7 @@ import HomeIndexDesktop from './HomeIndexDesktop';
 import ClimateIndexDesktop from './ClimateIndexDesktop';
 import HealthIndexDesktop from './HealthIndexDesktop';
 
+
 const DesktopNavbarIndexProvider = () => {
   const pathname = usePathname().split('/')[2] || '';
   const { locale } = useParams();

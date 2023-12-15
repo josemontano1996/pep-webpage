@@ -11,7 +11,6 @@ import {
 } from '@/components/ui/menubar';
 import { cn } from '@/lib/utils';
 import MobileNavbarIndexProvider from './MobileNavBarIndexProvider';
-import LocaleLink from '@/components/LocaleLink';
 import LocaleSelector from '@/components/translations/LocaleSelector';
 import { Menu } from 'lucide-react';
 

@@ -4,7 +4,7 @@ import { MenubarMenu, MenubarTrigger, MenubarContent, MenubarItem } from '@/comp
 
 const ClimateIndexDesktop = () => {
   return (
-    <>
+    
       <MenubarMenu>
         <MenubarTrigger>Index</MenubarTrigger>
         <MenubarContent>
@@ -23,7 +23,7 @@ const ClimateIndexDesktop = () => {
           </MenubarItem>
         </MenubarContent>
       </MenubarMenu>
-    </>
+   
   );
 }
 

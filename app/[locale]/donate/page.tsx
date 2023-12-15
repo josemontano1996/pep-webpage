@@ -24,7 +24,7 @@ const DonationPage = async ({
         <section className="mt-10">
           <h2 className="text-4xl">Spenden</h2>
           <div className="flex items-center">
-            <div className="itemsce my-4 flex justify-between gap-4">
+            <div className="my-4 flex flex-col items-center justify-between gap-4 lg:flex-row">
               <p className="flex-1">
                 <span className="italic">
                   Mitgliedsbeiträge und Spenden für den Verein PEP e.V. sind
@@ -33,7 +33,7 @@ const DonationPage = async ({
                   Gute der Projekte kommt.
                 </span>
               </p>
-              <ul className="grid flex-1 grid-cols-2 text-center">
+              <ul className="grid flex-1 grid-cols-2 gap-4 ">
                 <li className="flex items-center gap-2">
                   <Trees /> <span>Für die Aufforstung</span>
                 </li>
@@ -51,7 +51,7 @@ const DonationPage = async ({
               </ul>
             </div>
           </div>
-          <div className="mt-8 grid grid-cols-3 gap-8 ">
+          <div className="mt-8 flex flex-col items-center gap-8 xl:grid xl:grid-cols-3 ">
             <DonationCard />
             <StripeDonation />
             <BecomeMemberCard />
