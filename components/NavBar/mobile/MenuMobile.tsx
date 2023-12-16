@@ -13,6 +13,7 @@ import { cn } from '@/lib/utils';
 import MobileNavbarIndexProvider from './MobileNavBarIndexProvider';
 import LocaleSelector from '@/components/translations/LocaleSelector';
 import { Menu } from 'lucide-react';
+import ContactDialog from '@/components/ContactDialog';
 
 const MenuMobile = ({ locale }: { locale: string }) => {
   return (
@@ -44,9 +45,8 @@ const MenuMobile = ({ locale }: { locale: string }) => {
               </MenubarItem>
             </MenubarSubContent>
           </MenubarSub>
-          <MenubarItem>
-            {/* TODO:IMPLEMENT EMAIL SENDING DIALOG */}
-            Kontakt
+          <MenubarItem asChild>
+            <ContactDialog triggerStyle='text-sm pl-2 py-1'/>
           </MenubarItem>
           <MenubarSub>
             <div className="flex flex-col items-center pt-2 sm:hidden">

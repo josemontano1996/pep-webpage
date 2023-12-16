@@ -5,7 +5,7 @@ import { chirurgicImages, oxigenPlantImages } from '@/consts/health-page';
 const page = () => {
   return (
     <div className="max-w-screen-[1350px] mx-auto w-full px-[5vw] md:px-[3vw]">
-      <section id='surgery' className="space-y-14 py-10">
+      <section id="surgery" className="space-y-14 py-10">
         <div>
           <h2 className="text-center text-2xl font-medium sm:text-5xl">
             REKONSTRUKTIVE CHIRURGIE
@@ -50,7 +50,7 @@ const page = () => {
           </div>
         </div>
       </section>
-      <section id='oxigen' className="space-y-14 py-10">
+      <section id="oxigen" className="space-y-14 py-10">
         <div>
           <h2 className="text-center text-2xl font-medium sm:text-5xl">
             SAUERSTOFFANLAGE FÜR CAJAMARCA

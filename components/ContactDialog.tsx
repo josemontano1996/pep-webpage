@@ -1,56 +1,64 @@
 'use client';
 
+import { useForm } from 'react-hook-form';
 import { useRef } from 'react';
-
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import emailjs from '@emailjs/browser';
+import { Dialog, DialogClose, DialogContent, DialogTrigger } from './ui/dialog';
+import { Button } from './ui/button';
 import {
   Form,
-  FormControl,
   FormField,
   FormItem,
   FormLabel,
+  FormControl,
   FormMessage,
-} from '../ui/form';
-import { Input } from '../ui/input';
-import { Button } from '../ui/button';
-import { Dialog, DialogClose, DialogContent, DialogTrigger } from '../ui/dialog';
-import { Textarea } from '../ui/textarea';
-import { useForm } from 'react-hook-form';
+} from './ui/form';
+import { Input } from './ui/input';
+import { Textarea } from './ui/textarea';
+import { cn } from '@/lib/utils';
 
 const formSchema = z.object({
   username: z
     .string()
     .min(2, { message: 'Name should be at least 2 characters long.' }),
   email: z.string().email(),
+  subject: z
+    .string()
+    .min(5, { message: 'Message should bee 10 characters long.' }),
   message: z
     .string()
     .min(10, { message: 'Message should be 10 characters long.' }),
 });
 
-const BecomeMember = () => {
+type Props = {
+  triggerStyle?: string;
+};
+
+const ContactDialog = ({ triggerStyle = '' }: Props) => {
   const closeButton = useRef<HTMLButtonElement | null>(null);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: '',
       email: '',
-      message:
-        'Hello, I would like to become a member, could I have more information please?',
+      subject: '',
+      message: '',
     },
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    const { username, email, message } = values;
+    const { username, email, message, subject } = values;
 
     emailjs
       .send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_MEMBERSHIP_TEMPLATE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID!,
         {
           user_name: username,
           user_email: email,
+          user_subject: subject,
           message,
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
@@ -70,16 +78,16 @@ const BecomeMember = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Become a Member</Button>
+        <div className={cn('hover:cursor-pointer', triggerStyle)}>Contact</div>
       </DialogTrigger>
       <DialogContent className="z-50 border-primary/80">
         <Form {...form}>
           <form
-            className="space-y-6 p-2 rounded-xl"
+            className="space-y-6 rounded-xl p-2"
             onSubmit={form.handleSubmit(onSubmit)}
           >
             <h2 className="pb-3 text-center text-2xl font-medium">
-              Membership Contact Form
+              Contact Form
             </h2>
             <FormField
               control={form.control}
@@ -100,6 +108,19 @@ const BecomeMember = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Your Email</FormLabel>
+                  <FormControl>
+                    <Input placeholder="" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="subject"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Subject</FormLabel>
                   <FormControl>
                     <Input placeholder="" {...field} />
                   </FormControl>
@@ -139,4 +160,4 @@ const BecomeMember = () => {
   );
 };
 
-export default BecomeMember;
+export default ContactDialog;

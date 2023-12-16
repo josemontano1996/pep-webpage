@@ -6,11 +6,12 @@ import { cn } from '@/lib/utils';
 import LocaleSelector from '../translations/LocaleSelector';
 import initTranslations from '@/lib/i18n';
 import LeftNav from './LeftNavBar';
+import ContactDialog from '../ContactDialog';
 
 const NavBar = async ({ locale }: { locale: string }) => {
   const { t } = await initTranslations(locale, ['shared']);
   return (
-    <header className="fixed left-0 top-0 z-50 flex w-screen h-[9vh] items-center bg-white py-2 lg:px-[3vw]">
+    <header className="fixed left-0 top-0 z-50 flex h-[9vh] w-screen items-center bg-white py-2 lg:px-[3vw]">
       <nav className="flex-1">
         <LeftNav locale={locale} />
       </nav>
@@ -25,16 +26,7 @@ const NavBar = async ({ locale }: { locale: string }) => {
       </h1>
       <ul className="flex flex-1 items-center justify-end gap-6 pr-[2vw] lg:p-0">
         <li className="hidden lg:flex">
-          {/* TODO: change to button an create contact form */}
-          <LocaleLink
-            path="/contact"
-            styling={cn(
-              buttonVariants({ variant: 'ghost' }),
-              'text-sm xl:text-lg',
-            )}
-          >
-            {t('right-nav-contact')}
-          </LocaleLink>
+          <ContactDialog triggerStyle='text-lg' />
         </li>
         <li>
           <LocaleLink

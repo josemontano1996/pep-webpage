@@ -8,9 +8,18 @@ type Props = {
   alt: string;
   priority?: boolean;
   animation?: string;
+  height?: string;
+  width?: string;
 };
 
-const SlideShow = ({ images, alt, animation, priority = false }: Props) => {
+const SlideShow = ({
+  images,
+  alt,
+  animation,
+  priority = false,
+  height = 'auto',
+  width = 'auto',
+}: Props) => {
   const [isMounted, setisMounted] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAuto, setIsAuto] = useState(true);
@@ -69,7 +78,7 @@ const SlideShow = ({ images, alt, animation, priority = false }: Props) => {
         (image, i) =>
           i === currentSlide && (
             <div key={i} className={`w-[90%]`}>
-              <div>
+              <div className="flex flex-col items-center">
                 <Image
                   src={image.img}
                   alt={alt}
