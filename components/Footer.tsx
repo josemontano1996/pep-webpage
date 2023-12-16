@@ -1,6 +1,7 @@
+import Link from 'next/link';
 import ContactDialog from './ContactDialog';
 
-export const Footer = () => {
+export const Footer = ({ locale }: { locale: string }) => {
   return (
     <footer className="px-4 py-8 text-center">
       <ul>
@@ -8,7 +9,7 @@ export const Footer = () => {
           <a href="/">PEP &copy; 2023 |</a>
         </li>
         <li className="mr-2 inline-block">
-          <a href="">Aviso legal y Politica de Privacidad |</a>
+          <Link href={`/${locale}/transparency/impressum`}>Impressum |</Link>
         </li>
         <li className="mr-2 inline-block">
           <a href="">Copyright |</a>

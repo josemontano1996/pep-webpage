@@ -48,11 +48,11 @@ const MenuMobile = ({ locale }: { locale: string }) => {
           <MenubarItem asChild>
             <ContactDialog triggerStyle='text-sm pl-2 py-1'/>
           </MenubarItem>
-          <MenubarSub>
+         {/*  <MenubarSub>
             <div className="flex flex-col items-center pt-2 sm:hidden">
               <LocaleSelector />
             </div>
-          </MenubarSub>
+          </MenubarSub> */}
         </MenubarContent>
       </MenubarMenu>
     </Menubar>

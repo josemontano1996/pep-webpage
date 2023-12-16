@@ -33,12 +33,12 @@ export default async function HomePage({ params: { locale } }: Props) {
           src={heroImage}
           priority
           fill
-          alt={t('hero-img-alt')}
+          alt={''}
           className="object-cover"
         />
         <div className="absolute top-1/4 translate-y-[-60%] transform text-center">
           <h1 className="flex w-screen justify-center text-4xl sm:text-5xl font-bold text-white ">
-            {t('hero-title')}
+           {`"PEP für eine nachhaltigere Welt"`}
           </h1>
         </div>
       </section>

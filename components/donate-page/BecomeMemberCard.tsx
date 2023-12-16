@@ -6,6 +6,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import BecomeMember from './BecomeMember';
+import ContactDialog from '../ContactDialog';
 
 export default function BecomeMemberCard() {
   return (
@@ -14,11 +15,12 @@ export default function BecomeMemberCard() {
       className="flex h-full flex-col justify-between sm:w-[550px] xl:w-[350px]"
     >
       <CardHeader>
-        <CardTitle className="mb-2">Become a Member</CardTitle>
+        <CardTitle className="mb-2">Mitglied werden</CardTitle>
         <CardDescription>
-          We are always welcome to invite people on board, if you want to get
-          involved in our proyects, just click the button down below to contact
-          us and we will give you further all the information you need.
+          Sie sind jederzeit herzlich willkommen. Wenn Sie sich an unseren
+          Projekten beteiligen möchten, klicken Sie einfach auf die Schaltfläche
+          unten oder nehmen Sie <ContactDialog triggerStyle="underline" /> mit
+          uns.
         </CardDescription>
       </CardHeader>
 

@@ -10,10 +10,12 @@ const HomeIndexMobile = () => {
   return (
     <>
       <MenubarSub>
-        <MenubarSubTrigger>Wer sind wir?</MenubarSubTrigger>
+        <MenubarSubTrigger>Über uns</MenubarSubTrigger>
         <MenubarSubContent>
           <MenubarItem>
-            <SmoothScrollLink scrollToId="about">Über uns</SmoothScrollLink>
+            <SmoothScrollLink scrollToId="about">
+              Wer sind wir?
+            </SmoothScrollLink>
           </MenubarItem>
           <MenubarItem>
             <SmoothScrollLink scrollToId="goals">

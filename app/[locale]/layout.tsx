@@ -29,7 +29,7 @@ export default async function RootLayout({
           <main className="flex min-h-[81vh] flex-col pt-[9vh]">
             <div className="flex-1">{children}</div>
           </main>
-          <Footer />
+          <Footer locale={locale} />
         </TranslationsProvider>
       </body>
     </html>

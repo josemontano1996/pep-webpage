@@ -78,7 +78,7 @@ const ContactDialog = ({ triggerStyle = '' }: Props) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className={cn('hover:cursor-pointer', triggerStyle)}>Contact</div>
+        <span className={cn('hover:cursor-pointer', triggerStyle)}>Kontakt</span>
       </DialogTrigger>
       <DialogContent className="z-50 border-primary/80">
         <Form {...form}>
@@ -87,14 +87,14 @@ const ContactDialog = ({ triggerStyle = '' }: Props) => {
             onSubmit={form.handleSubmit(onSubmit)}
           >
             <h2 className="pb-3 text-center text-2xl font-medium">
-              Contact Form
+              Kontakt Form
             </h2>
             <FormField
               control={form.control}
               name="username"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Your Name</FormLabel>
+                  <FormLabel>Name</FormLabel>
                   <FormControl>
                     <Input placeholder="" {...field} />
                   </FormControl>
@@ -107,7 +107,7 @@ const ContactDialog = ({ triggerStyle = '' }: Props) => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Your Email</FormLabel>
+                  <FormLabel>Email</FormLabel>
                   <FormControl>
                     <Input placeholder="" {...field} />
                   </FormControl>
@@ -120,7 +120,7 @@ const ContactDialog = ({ triggerStyle = '' }: Props) => {
               name="subject"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Subject</FormLabel>
+                  <FormLabel>Betreff</FormLabel>
                   <FormControl>
                     <Input placeholder="" {...field} />
                   </FormControl>
@@ -133,7 +133,7 @@ const ContactDialog = ({ triggerStyle = '' }: Props) => {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Your message</FormLabel>
+                  <FormLabel>Nachricht</FormLabel>
                   <FormControl>
                     <Textarea
                       {...field}

@@ -3,7 +3,6 @@ import Image from 'next/image';
 import LocaleLink from '../translations/LocaleLink';
 import { buttonVariants } from '../ui/button';
 import { cn } from '@/lib/utils';
-import LocaleSelector from '../translations/LocaleSelector';
 import initTranslations from '@/lib/i18n';
 import LeftNav from './LeftNavBar';
 import ContactDialog from '../ContactDialog';
@@ -39,9 +38,9 @@ const NavBar = async ({ locale }: { locale: string }) => {
             {t('right-nav-donate')}
           </LocaleLink>
         </li>
-        <li className="hidden sm:block">
+       {/*  <li className="hidden sm:block">
           <LocaleSelector />
-        </li>
+        </li> */}
       </ul>
     </header>
   );

@@ -37,7 +37,7 @@ const BecomeMember = () => {
       username: '',
       email: '',
       message:
-        'Hello, I would like to become a member, could I have more information please?',
+        '',
     },
   });
 
@@ -70,23 +70,23 @@ const BecomeMember = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Become a Member</Button>
+        <Button>Mitglied werden</Button>
       </DialogTrigger>
       <DialogContent className="z-50 border-primary/80">
         <Form {...form}>
           <form
-            className="space-y-6 p-2 rounded-xl"
+            className="space-y-6 rounded-xl p-2"
             onSubmit={form.handleSubmit(onSubmit)}
           >
             <h2 className="pb-3 text-center text-2xl font-medium">
-              Membership Contact Form
+              Mitglied 
             </h2>
             <FormField
               control={form.control}
               name="username"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Your Name</FormLabel>
+                  <FormLabel>Name</FormLabel>
                   <FormControl>
                     <Input placeholder="" {...field} />
                   </FormControl>
@@ -99,7 +99,7 @@ const BecomeMember = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Your Email</FormLabel>
+                  <FormLabel>Email</FormLabel>
                   <FormControl>
                     <Input placeholder="" {...field} />
                   </FormControl>
@@ -112,7 +112,7 @@ const BecomeMember = () => {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Your message</FormLabel>
+                  <FormLabel>Nachricht</FormLabel>
                   <FormControl>
                     <Textarea
                       {...field}
@@ -125,10 +125,10 @@ const BecomeMember = () => {
               )}
             />
             <div className="flex justify-between">
-              <Button type="submit">Submit</Button>
+              <Button type="submit">Senden</Button>
               <DialogClose asChild>
                 <Button type="button" variant={'ghost'} ref={closeButton}>
-                  Close
+                  Schließen
                 </Button>
               </DialogClose>
             </div>

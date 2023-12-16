@@ -1,16 +1,24 @@
 'use client';
 import { cn } from '@/lib/utils';
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card';
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '../ui/card';
 import { buttonVariants } from '../ui/button';
-
 
 const StripeDonation = () => {
   return (
-    <Card id='online' className="flex flex-col h-full justify-between sm:w-[550px] xl:w-[350px]">
+    <Card
+      id="online"
+      className="flex h-full flex-col justify-between sm:w-[550px] xl:w-[350px]"
+    >
       <CardHeader>
-        <CardTitle className="mb-2">Online Donation</CardTitle>
+        <CardTitle className="mb-2">Online Spenden</CardTitle>
         <CardDescription>
-          Directly make a donation online. Powered by{' '}
+          Spenden Sie direkt online. Mit{' '}
           <a
             target="_blank"
             className="italic hover:underline"
@@ -18,7 +26,8 @@ const StripeDonation = () => {
           >
             Stripe
           </a>{' '}
-          you can safely either make a single or recurring donation.
+          können Sie sicher entweder eine einmalige oder eine wiederkehrende
+          Spende tätigen.
         </CardDescription>
       </CardHeader>
       <CardFooter className="flex flex-col items-center">
@@ -26,12 +35,11 @@ const StripeDonation = () => {
           className={cn(buttonVariants())}
           href={process.env.NEXT_PUBLIC_STRIPE_LINK}
         >
-          Online Donation
+          Online Spenden
         </a>
       </CardFooter>
     </Card>
   );
 };
-   
 
 export default StripeDonation;

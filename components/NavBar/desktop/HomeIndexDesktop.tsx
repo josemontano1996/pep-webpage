@@ -10,10 +10,12 @@ const HomeIndexDesktop = () => {
   return (
     <>
       <MenubarMenu>
-        <MenubarTrigger>Wer sind wir?</MenubarTrigger>
+        <MenubarTrigger>Über uns</MenubarTrigger>
         <MenubarContent>
           <MenubarItem>
-            <SmoothScrollLink scrollToId="about">Über uns</SmoothScrollLink>
+            <SmoothScrollLink scrollToId="about">
+              Wer sind wir?
+            </SmoothScrollLink>
           </MenubarItem>
           <MenubarItem>
             <SmoothScrollLink scrollToId="goals">
