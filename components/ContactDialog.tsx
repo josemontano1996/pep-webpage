@@ -13,7 +13,7 @@ import {
   DialogHeader,
   DialogTrigger,
 } from './ui/dialog';
-import { Button } from './ui/button';
+import { Button, buttonVariants } from './ui/button';
 import {
   Form,
   FormField,
@@ -86,22 +86,18 @@ const ContactDialog = ({ triggerStyle = '' }: Props) => {
   };
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <span className={cn('hover:cursor-pointer', triggerStyle)}>
-          Kontakt
-        </span>
+      <DialogTrigger className={cn('hover:cursor-pointer', triggerStyle)}>
+        Kontakt
       </DialogTrigger>
       <DialogContent className="z-50 border-primary/80">
         <DialogHeader>
-          <DialogTitle>
-            <h2 className="pb-3 text-center text-2xl font-medium">
-              Kontakt Form
-            </h2>
+          <DialogTitle className={cn('pb-3 text-center text-2xl font-medium')}>
+            Kontakt Form
           </DialogTitle>
-          <DialogDescription className='text-center'>
+          <DialogDescription className="text-center">
             <p>{process.env.NEXT_PUBLIC_PEP_EMAIL}</p>
             <address>
-            {address.street}, {address.postal}, {address.city}
+              {address.street}, {address.postal}, {address.city}
             </address>
           </DialogDescription>
         </DialogHeader>
@@ -168,10 +164,11 @@ const ContactDialog = ({ triggerStyle = '' }: Props) => {
             />
             <div className="flex justify-between">
               <Button type="submit">Submit</Button>
-              <DialogClose asChild>
-                <Button type="button" variant={'ghost'} ref={closeButton}>
-                  Close
-                </Button>
+              <DialogClose
+                className={cn(buttonVariants({ variant: 'ghost' }))}
+                ref={closeButton}
+              >
+                Close
               </DialogClose>
             </div>
           </form>

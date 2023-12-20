@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { Metadata } from 'next';
+import Image from 'next/image';
 import initTranslations from '@/lib/i18n';
 
 import heroImage from '@/public/imgs/heroImg-min.jpg';
@@ -8,6 +8,7 @@ import sustainabilityImg from '@/public/imgs/sustainability-leaf.jpg';
 import MaxWidthWrapper from '@/components/Wrappers/MaxWidthWrapper';
 import ClimateHomeSection from '@/components/home-page/ClimateHomeSection';
 import HealthHomeSection from '@/components/home-page/HealthHomeSection';
+import DonateCallToAction from '@/components/DonateCallToAction';
 
 interface Props {
   params: { locale: string };
@@ -18,13 +19,17 @@ export async function generateMetadata({
 }: Props): Promise<Metadata> {
   const { t } = await initTranslations(locale, ['home']);
   return {
-    title: t('meta-title'),
-    description: t('meta-description'),
+    title:
+      'PEP e.V. - Projekte für Entwicklungsförderung in Peru und Lateinamerika',
+    description:
+      'PEP e.V. - Gemeinnütziger Verein mit Sitz in Trier, der Aufforstungs- und Gesundheitsprojekte für Bedürftige in Peru durchführt.',
+    keywords:
+      'PEP e.V., Trier, Peru, gemeinnütziger Verein, Projekte, Gesundheitshilfe, Armut, Unterstützung, Planung, Hilfe, Klimawandel',
   };
 }
 
 export default async function HomePage({ params: { locale } }: Props) {
-  const { t } = await initTranslations(locale, ['home']);
+/*   const { t } = await initTranslations(locale, ['home']); */
 
   return (
     <>
@@ -33,12 +38,12 @@ export default async function HomePage({ params: { locale } }: Props) {
           src={heroImage}
           priority
           fill
-          alt={''}
+          alt={'foto von unserem team in peru'}
           className="object-cover"
         />
         <div className="absolute top-1/4 translate-y-[-60%] transform text-center">
-          <h1 className="flex w-screen justify-center text-4xl sm:text-5xl font-bold text-white ">
-           {`"PEP für eine nachhaltigere Welt"`}
+          <h1 className="flex w-screen justify-center text-4xl font-bold text-white sm:text-5xl ">
+            {`"PEP für eine nachhaltigere Welt"`}
           </h1>
         </div>
       </section>
@@ -54,12 +59,13 @@ export default async function HomePage({ params: { locale } }: Props) {
               </h2>
               <p className="text-center sm:text-xl">
                 PEP e. V.{' '}
-                <span className="font-semibold text-primary">{`(${t(
-                  's1-pep-long',
-                )})`}</span>{' '}
-                {t('s1-p1-1')}{' '}
+                <span className="font-semibold text-primary">{`(Projekte für Entwicklungsförderung in Peru und Lateinamerika)`}</span>{' '}
+                st ein gemeinnütziger Verein, der am 22. Februar 2002 in Trier
+                gegründet wurde. Dessen Absicht ist die{' '}
                 <span className="font-semibold text-primary">
-                  {t('s1-p1-2')}
+                  Förderung der sozialen und ökonomischen Entwicklung,
+                  Gesundheit, Bildung, Kulturund Umweltschutz in Peru und
+                  Lateinamerika.
                 </span>
               </p>
             </article>
@@ -68,14 +74,14 @@ export default async function HomePage({ params: { locale } }: Props) {
             id="goals"
             className="relative my-20 bg-lime-100 pt-4 sm:ml-[10vw] sm:max-w-[90vw] xl:pt-20"
           >
-            <h4 className="mb-8 transform text-center text-4xl xl:absolute xl:left-1/2 xl:top-3 xl:-translate-x-1/2">
-              {t('s1-t2')}
-            </h4>
+            <h2 className="mb-8 transform text-center text-4xl xl:absolute xl:left-1/2 xl:top-3 xl:-translate-x-1/2">
+              Was bewegt uns?
+            </h2>
             <div className="grid-cols-2 justify-items-center gap-10 sm:w-[80vw] xl:grid">
               <div className="sm:w-4/5 xl:flex xl:h-full xl:w-full xl:flex-col xl:justify-end">
                 <Image
                   src={sustainabilityImg}
-                  alt={'sustainability image'}
+                  alt={'Nachhaltigkeitsimage'}
                   className="object-cover"
                 />
               </div>
@@ -128,6 +134,13 @@ export default async function HomePage({ params: { locale } }: Props) {
               <ClimateHomeSection />
               <HealthHomeSection />
             </div>
+          </section>
+          <section className="pt-20 text-center">
+            <p>
+              Wir brauchen Ihre Hilfe, um die Welt weiterhin zu einem besseren
+              und nachhaltigen Ort zu machen, bitte uns zu spenden.
+            </p>
+            <DonateCallToAction />
           </section>
         </MaxWidthWrapper>
       </div>

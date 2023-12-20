@@ -7,6 +7,24 @@ import hoyacionPhoto from '@/public/imgs/hoyacion.jpg';
 import hoyacionPhoto2 from '@/public/imgs/hoyacion-2.jpg';
 import ventajasSociales from '@/public/imgs/ventajassociales.jpg';
 import DonateCallToAction from '@/components/DonateCallToAction';
+import { Metadata } from 'next';
+
+interface Props {
+  params: { locale: string };
+}
+
+export async function generateMetadata({
+  params: { locale },
+}: Props): Promise<Metadata> {
+
+  return {
+    title: 'Aufforstungsprojekt in Cajamarca - PEP e.V.',
+    description:
+      'Aufforstungsprojekt in Cajamarca - PEP e.V. setzt sich für die Aufforstung in der Gemeinde Mutisch, Bezirk El Prado, Provinz San Miguel de Pallaques, Departament Cajamarca, Peru, ein. Ziel: Eine Million Bäume in zehn Jahren.',
+    keywords:
+      'Aufforstungsprojekt, Cajamarca, PEP e.V., Mutisch, El Prado, San Miguel de Pallaques, Peru, Umweltvorteile, soziale Vorteile, wirtschaftliche Vorteile, Pflanzung, Baumpflanzung, Projektfinanzierung, Klimawandel',
+  };
+}
 
 const ClimatePage = () => {
   return (
@@ -43,7 +61,7 @@ const ClimatePage = () => {
                 >
                   <Image
                     src={mapPhoto}
-                    alt={'cajamarca map'}
+                    alt={'Karte von Peru mit Cajamarca Hervorgehoben'}
                     className="h-[50vh] object-cover"
                   />
                 </a>
@@ -65,7 +83,10 @@ const ClimatePage = () => {
               href="https://en.wikipedia.org/wiki/Department_of_Cajamarca#/media/File:Peru_-_Cajamarca_Department_(locator_map).svg"
               target="_blank"
             >
-              <Image src={mapPhoto} alt={'cajamarca map'} />
+              <Image
+                src={mapPhoto}
+                alt={'Karte von Peru mit Cajamarca Hervorgehoben'}
+              />
             </a>
           </div>
         </div>
@@ -91,7 +112,7 @@ const ClimatePage = () => {
           <div className="lg:grid lg:grid-cols-12 lg:items-center lg:gap-8">
             <div className="space-y-4 lg:col-span-6">
               <div className="col-span-6 lg:hidden">
-                <Image src={ventajasSociales} alt="" className="rounded-xl" />
+                <Image src={ventajasSociales} alt="Soziale Vorteile" className="rounded-xl" />
               </div>
               <p>
                 Ziel des Projekts ist auch, die Lebensbedingungen der
@@ -112,7 +133,7 @@ const ClimatePage = () => {
               </p>
             </div>
             <div className="hidden lg:col-span-6 lg:block">
-              <Image src={ventajasSociales} alt="" className="rounded-xl" />
+              <Image src={ventajasSociales} alt="Soziale Vorteile" className="rounded-xl" />
             </div>
           </div>
         </div>
@@ -150,7 +171,7 @@ const ClimatePage = () => {
             <div className="space-y-4">
               <h5 className="mb-1 text-xl">AUSWAHL DER BAUMART</h5>
               <div className="col-span-6 block lg:hidden">
-                <Image src={viveroPhoto} alt="" className="rounded-xl" />
+                <Image src={viveroPhoto} alt="Anplanzung" className="rounded-xl" />
               </div>
               <p>
                 Baumart: Radiata-Kiefer{' '}
@@ -196,7 +217,7 @@ const ClimatePage = () => {
               <div className="col-span-4 lg:hidden ">
                 <Image
                   src={hoyacionPhoto2}
-                  alt=""
+                  alt="Pflanzung"
                   className="h-[80vh] rounded-xl object-cover"
                 />
               </div>

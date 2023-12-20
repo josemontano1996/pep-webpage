@@ -19,11 +19,11 @@ export default function DonationCard() {
         <CardDescription>
           Machen Sie Ihre Spende direkt über Ihre Bank. Überweisen Sie einfach
           Ihre Spende oder richten Sie einen Dauerauftrag bei Ihrer Bank auf
-          folgendes Konto ein oder{' '}
+          folgendes Konto ein. {/* oder{' '}
           <a className='underline hover:cursor-pointer'>
             erteilen Sie uns eine Einzugsermächtigung oder ein
             SEPA-Lastschriftmandat:
-          </a>
+          </a> */}
         </CardDescription>
       </CardHeader>
       <CardContent>

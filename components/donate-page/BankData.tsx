@@ -1,10 +1,7 @@
-
 import { CopyButton } from './CopyButton';
 
 const BankData = () => {
-  //TODO:update bank data
   return (
- 
       <div className="space-y-3">
         <p className="flex gap-2">
           <strong>IBAN:</strong>{' '}

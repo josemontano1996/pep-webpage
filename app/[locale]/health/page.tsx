@@ -1,6 +1,26 @@
 import DonateCallToAction from '@/components/DonateCallToAction';
 import SlideShow from '@/components/SlideShow';
 import { chirurgicImages, oxigenPlantImages } from '@/consts/health-page';
+import { Metadata } from 'next';
+
+interface Props {
+  params: { locale: string };
+}
+
+export async function generateMetadata({
+  params: { locale },
+}: Props): Promise<Metadata> {
+
+  return {
+    title:
+      'Rekonstruktive Chirurgie und Sauerstoffanlage für Cajamarca - PEP e.V.',
+    description:
+      'Rekonstruktive Chirurgie und Sauerstoffanlage für Cajamarca - PEP e.V. führt medizinische Einsätze in Peru durch, um angeborene oder erworbene Fehlbildungen zu behandeln und Sauerstoffanlagen für den Zugang zu lebensrettender Versorgung bereitzustellen.',
+    keywords:
+      'Rekonstruktive Chirurgie, Sauerstoffanlage, Cajamarca, PEP e.V., medizinische Einsätze, Fehlbildungen, soziale Hilfe, Covid-19, Sauerstoffversorgung, Spenden',
+  };
+}
+
 
 const page = () => {
   return (
@@ -44,7 +64,7 @@ const page = () => {
             <SlideShow
               priority={true}
               images={chirurgicImages}
-              alt={''}
+              alt={'Rekonstruktive Chirurgie'}
               animation="fade-in-out-slider"
             />
           </div>
@@ -60,7 +80,7 @@ const page = () => {
           <div className="lg:col-span-7">
             <SlideShow
               images={oxigenPlantImages}
-              alt={''}
+              alt={'Sauerstoffanlage für Cajamarca'}
               animation="fade-in-out-slider"
             />
           </div>

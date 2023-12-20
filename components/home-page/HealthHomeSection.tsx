@@ -8,17 +8,17 @@ import healthImg from '@/public/imgs/gesundheitmain.png';
 const HealthHomeSection = () => {
   return (
     <div className="flex flex-col justify-between space-y-7">
-      <h4 className="mx-auto flex items-center gap-2 text-xl font-semibold text-rose-500 sm:text-3xl lg:mx-0">
+      <h3 className="mx-auto flex items-center gap-2 text-xl font-semibold text-rose-500 sm:text-3xl lg:mx-0">
         <span>
           <HeartPulse />
         </span>
         Für die Gesundheit
-      </h4>
+      </h3>
       <div className="gap-8 space-y-4 lg:flex lg:space-y-0">
         <div className="my-auto lg:hidden">
-          <Image src={healthImg} alt={''} />
+          <Image src={healthImg} alt={'Fotos der rekonstruktiven Chirurgie'} />
         </div>
-        <div className="flex sm:text-lg flex-1 flex-col items-center justify-between space-y-4 lg:text-left">
+        <div className="flex flex-1 flex-col items-center justify-between space-y-4 sm:text-lg lg:text-left">
           <p>
             Die Mehrheit der peruanischen Bevölkerung hat keinen Zugang zu
             angemessenen Gesundheitsversorgung, oft nicht einmal zu den
@@ -52,7 +52,7 @@ const HealthHomeSection = () => {
           </div>
         </div>
         <div className="my-auto hidden flex-1 lg:block">
-          <Image src={healthImg} alt={''} />
+          <Image src={healthImg} alt={'Fotos der rekonstruktiven Chirurgie'} />
         </div>
       </div>
     </div>

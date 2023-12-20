@@ -1,8 +1,8 @@
 const i18nConfig = {
-  locales: ['de', 'es', 'en'],
-  defaultLocale: 'en',
+  locales: ['de'/* , 'es', 'en' */],
+  defaultLocale: 'de',
   routingStrategy: 'dynamicSegment',
-  prefixDefault: 'en',
+  prefixDefault: 'de',
 };
 
 module.exports = i18nConfig;

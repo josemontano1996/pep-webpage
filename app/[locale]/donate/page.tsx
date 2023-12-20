@@ -7,11 +7,22 @@ import DonationCard from '@/components/donate-page/DonationCard';
 import StripeDonation from '@/components/donate-page/StripeDonation';
 import BecomeMemberCard from '@/components/donate-page/BecomeMemberCard';
 
-export const metadata: Metadata = {
-  title: 'Donate now',
-  description: 'Donation page for PEP',
-};
+interface Props {
+  params: { locale: string };
+}
 
+export async function generateMetadata({
+  params: { locale },
+}: Props): Promise<Metadata> {
+  const { t } = await initTranslations(locale, ['home']);
+  return {
+    title: 'Spenden für Entwicklungsförderungsprojekte - PEP e.V.',
+    description:
+      'Unterstützen Sie die wertvolle Arbeit von PEP e.V. - Spenden Sie für Aufforstungs- und Gesundheitsprojekte in Peru und Lateinamerika.',
+    keywords:
+      'Spenden, PEP e.V., Trier, Peru, Aufforstungsprojekte, Gesundheitsprojekte, Entwicklungshilfe, Lateinamerika, Klimawandel',
+  };
+}
 const DonationPage = async ({
   params: { locale },
 }: {
@@ -22,21 +33,24 @@ const DonationPage = async ({
     <TranslationsProvider namespaces={options.ns} locale={locale}>
       <MaxWidthWrapper>
         <section className="mt-10 space-y-4">
-          <h2 className="text-4xl">Spenden</h2>
+          <h1 className="text-4xl">Spenden</h1>
           <div className="space-y-2 italic">
             <p>
               Mitgliedsbeiträge und Spenden für den Verein PEP e.V. sind
               steuerlich absetzbar. Wir bei PEP sind stolz darauf,{' '}
-              <span className='font-bold'>eine ehrenamtliche Organisation zu sein.</span> Das
-              bedeutet, dass jeder Cent, den wir erhalten, direkt den von uns
-              unterstützten Projekten zugute kommt, sodass Ihre Spenden die
+              <span className="font-bold">
+                eine ehrenamtliche Organisation zu sein.
+              </span>{' '}
+              Das bedeutet, dass jeder Cent, den wir erhalten, direkt den von
+              uns unterstützten Projekten zugute kommt, sodass Ihre Spenden die
               größtmögliche Wirkung erzielen.
             </p>
+            <p>PEP e. V. ist ein gemeinnütziger Verein.</p>
             <p>
-            PEP e. V. ist ein gemeinnütziger Verein.
+              Registergericht: Amtsgericht{' '}
+              {process.env.NEXT_PUBLIC_PEP_REGISTER_CITY}
             </p>
-            <p>Registergericht: Amtsgericht Trier </p>
-            <p> Registernummer VR3434</p>
+            <p> Registernummer {process.env.NEXT_PUBLIC_PEP_REGISTER_NUMBER}</p>
             <p>
               {' '}
               Der Verein ist nach dem Freistellungsbescheid des Finanzamtes

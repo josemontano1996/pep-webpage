@@ -14,11 +14,11 @@ const ClimateHomeSection = () => {
         <span>
           <Trees />
         </span>
-        <h4>Für die Umwelt und Klimawandel</h4>
+        <h3>Für die Umwelt und Klimawandel</h3>
       </div>
       <div className="gap-8 space-y-4 lg:flex lg:space-y-0">
         <div className="my-auto flex-1">
-          <Image src={umweltImg} alt={'umwelt img'} className="rounded-xl" />
+          <Image src={umweltImg} alt={'Umwelt foto'} className="rounded-xl" />
         </div>
         <div className="flex flex-1 flex-col items-center justify-between space-y-4 sm:text-lg lg:text-left">
           <p>
