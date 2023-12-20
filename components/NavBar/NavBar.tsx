@@ -25,7 +25,7 @@ const NavBar = async ({ locale }: { locale: string }) => {
       </h1>
       <ul className="flex flex-1 items-center justify-end gap-6 pr-[2vw] lg:p-0">
         <li className="hidden lg:flex">
-          <ContactDialog triggerStyle='text-lg' />
+          <ContactDialog triggerStyle="text-lg" />
         </li>
         <li>
           <LocaleLink
@@ -35,10 +35,10 @@ const NavBar = async ({ locale }: { locale: string }) => {
               'text-sm xl:text-lg text-xs sm:text-base',
             )}
           >
-            {t('right-nav-donate')}
+            Spenden
           </LocaleLink>
         </li>
-       {/*  <li className="hidden sm:block">
+        {/*  <li className="hidden sm:block">
           <LocaleSelector />
         </li> */}
       </ul>

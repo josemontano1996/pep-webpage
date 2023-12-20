@@ -8,6 +8,7 @@ import {
 import DesktopNavbarIndexProvider from './DesktopNavBarIndexProvider';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import DataPrivacyLink from '@/components/transparency/DataPrivacyLink';
 
 const MenuDesktop = ({ locale }: { locale: string }) => {
   return (
@@ -31,7 +32,7 @@ const MenuDesktop = ({ locale }: { locale: string }) => {
             <a href="/pdf/freistellungsbescheid-2021.pdf" target="_blank">
               Gemeinnützigkeit
             </a>
-          </MenubarItem>
+          </MenubarItem>       
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu></MenubarMenu>

@@ -1,4 +1,5 @@
 import MaxWidthWrapper from '@/components/Wrappers/MaxWidthWrapper';
+import { address } from '@/consts/address';
 
 const page = () => {
   return (
@@ -8,7 +9,7 @@ const page = () => {
           <h1 className="text-2xl">Angaben gemäß § 5 TMG</h1>
           <p>
             Informationsstelle {process.env.NEXT_PUBLIC_COMPANY_NAME}{' '}
-            {process.env.NEXT_PUBLIC_PEP_ADDRESS}.
+            {address.street}, {address.postal}, {address.city}.
           </p>
           <h3 className="text-2xl">Vertreten durch:</h3>
           <p>Dr. Stefan Pappert, Ricardo Bueno.</p>
@@ -17,12 +18,16 @@ const page = () => {
           <h3 className="text-2xl">Registereintrag:</h3>
           <div>
             <p>Eintragung im Vereinsregister</p>
-            <p>Registergericht: Trier</p>
-            <p>Registernummer: VR 3434</p>
+            <p>Registergericht: {process.env.NEXT_PUBLIC_PEP_REGISTER_CITY}</p>
+            <p>Registernummer: {process.env.NEXT_PUBLIC_PEP_REGISTER_NUMBER}</p>
           </div>
           <div>
             <h1 className="text-2xl">Web-Entwicklung:</h1>
-            <a target='_blank' href="https://www.linkedin.com/in/josemanuelmontanomengual" className='hover:underline'>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/josemanuelmontanomengual"
+              className="hover:underline text-blue-400"
+            >
               Jose Manuel Montano Mengual
             </a>
           </div>
@@ -69,7 +74,7 @@ const page = () => {
           </p>
         </div>
         <div>
-          <h1 className='text-2xl'>Urheberrecht</h1>
+          <h1 className="text-2xl">Urheberrecht</h1>
           <p>
             Die durch die Seitenbetreiber erstellten Inhalte und Werke auf
             diesen Seiten unterliegen dem deutschen Urheberrecht. Die

@@ -5,7 +5,14 @@ import { useRef } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import emailjs from '@emailjs/browser';
-import { Dialog, DialogClose, DialogContent, DialogTrigger } from './ui/dialog';
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTrigger,
+} from './ui/dialog';
 import { Button } from './ui/button';
 import {
   Form,
@@ -18,6 +25,8 @@ import {
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { cn } from '@/lib/utils';
+import { DialogTitle } from '@radix-ui/react-dialog';
+import { address } from '@/consts/address';
 
 const formSchema = z.object({
   username: z
@@ -78,17 +87,29 @@ const ContactDialog = ({ triggerStyle = '' }: Props) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <span className={cn('hover:cursor-pointer', triggerStyle)}>Kontakt</span>
+        <span className={cn('hover:cursor-pointer', triggerStyle)}>
+          Kontakt
+        </span>
       </DialogTrigger>
       <DialogContent className="z-50 border-primary/80">
+        <DialogHeader>
+          <DialogTitle>
+            <h2 className="pb-3 text-center text-2xl font-medium">
+              Kontakt Form
+            </h2>
+          </DialogTitle>
+          <DialogDescription className='text-center'>
+            <p>{process.env.NEXT_PUBLIC_PEP_EMAIL}</p>
+            <address>
+            {address.street}, {address.postal}, {address.city}
+            </address>
+          </DialogDescription>
+        </DialogHeader>
         <Form {...form}>
           <form
             className="space-y-6 rounded-xl p-2"
             onSubmit={form.handleSubmit(onSubmit)}
           >
-            <h2 className="pb-3 text-center text-2xl font-medium">
-              Kontakt Form
-            </h2>
             <FormField
               control={form.control}
               name="username"

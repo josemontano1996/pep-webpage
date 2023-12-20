@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import ContactDialog from './ContactDialog';
+import DataPrivacyLink from './transparency/DataPrivacyLink';
 
 export const Footer = ({ locale }: { locale: string }) => {
   return (
@@ -12,10 +13,7 @@ export const Footer = ({ locale }: { locale: string }) => {
           <Link href={`/${locale}/transparency/impressum`}>Impressum |</Link>
         </li>
         <li className="mr-2 inline-block">
-          <a href="">Copyright |</a>
-        </li>
-        <li className="mr-2 inline-block">
-          <a href="">Politica de cookies |</a>
+          <DataPrivacyLink /> |
         </li>
         <li className="mr-1 inline-block">
           <ContactDialog />

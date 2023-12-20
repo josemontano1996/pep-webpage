@@ -1,12 +1,12 @@
 import {
   Card,
+  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
 import BecomeMember from './BecomeMember';
-import ContactDialog from '../ContactDialog';
 
 export default function BecomeMemberCard() {
   return (
@@ -19,8 +19,10 @@ export default function BecomeMemberCard() {
         <CardDescription>
           Sie sind jederzeit herzlich willkommen. Wenn Sie sich an unseren
           Projekten beteiligen möchten, klicken Sie einfach auf die Schaltfläche
-          unten oder nehmen Sie <ContactDialog triggerStyle="underline" /> mit
-          uns.
+          unten und nehmen Sie unverbindlich Kontakt mit uns auf, um weitere
+          Informationen zu erhalten.
+          {/* oder nehmen Sie <ContactDialog triggerStyle="underline" /> mit
+          uns. */}
         </CardDescription>
       </CardHeader>
 
