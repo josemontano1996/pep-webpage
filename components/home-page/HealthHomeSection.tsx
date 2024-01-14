@@ -28,7 +28,7 @@ const HealthHomeSection = () => {
             {' '}
             Die Patienten müssen in der Regel die gesamten Kosten ihrer
             Behandlung selbst tragen. Das führt oft dazu, dass{' '}
-            <span className="font-semibold text-primary">
+            <span className="font-semibold text-rose-400">
               viele Patienten der armen Bevölkerungsschichten unbehandelt
               bleiben.
             </span>

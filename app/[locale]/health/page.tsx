@@ -89,7 +89,7 @@ const page = () => {
               Im Zuge der Covid-19 Pandemie kam es in vielen Städten Perus zu
               einem Engpass in der Sauerstoffversorgung. Viele Patienten starben
               deswegen. Unter der Führung von Pater Pedro Teran wurde die
-              Kampagne Cajamarca Respira (Cajamarca atmet) ins Leben gerufen,
+              Kampagne Cajamarca Respira {`(Cajamarca atmet)`} ins Leben gerufen,
               mit dem Zweck durch Spenden Anlagen für die Sauerstoffproduktion
               zu beschaffen und den Patienten den Zugang zu Sauerstoff zu
               ermöglichen.

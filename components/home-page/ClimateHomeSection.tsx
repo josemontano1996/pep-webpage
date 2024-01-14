@@ -10,7 +10,7 @@ import umweltImg from '@/public/imgs/umwelt2.jpg';
 const ClimateHomeSection = () => {
   return (
     <div className="flex flex-col justify-between space-y-7">
-      <div className="mx-auto flex items-center gap-2 text-xl font-semibold text-green-500 sm:text-3xl lg:mx-0 lg:justify-end ">
+      <div className="mx-auto flex items-center gap-2 text-xl font-semibold text-green-600 sm:text-3xl lg:mx-0 lg:justify-end ">
         <span>
           <Trees />
         </span>
@@ -22,14 +22,14 @@ const ClimateHomeSection = () => {
         </div>
         <div className="flex flex-1 flex-col items-center justify-between space-y-4 sm:text-lg lg:text-left">
           <p>
-            <span className="font-semibold text-primary">
+            <span className="font-semibold text-green-500">
               {' '}
               Die Erderwärmung schreitet immer schneller voran{' '}
             </span>
             und ist durch Veränderungen im Klimasystem in allen Regionen der
             Welt spürbar. Die Auswirkungen der globalen Erwärmung wegen des
             Treibhauseffektes werden immer stärker und{' '}
-            <span className="font-semibold text-primary">
+            <span className="font-semibold text-green-500">
               es ist dringend erforderlich, die CO2-Konzentration in der
               Atmosphäre zu reduzieren.{' '}
             </span>
@@ -42,7 +42,7 @@ const ClimateHomeSection = () => {
           </p>
           <p className="hidden xl:block">
             Wir wollen durch{' '}
-            <span className="font-semibold text-primary">
+            <span className="font-semibold text-green-500">
               Aufforstung zur aktiven Entnahme von Kohlendioxid aus der
               Atmosphäre
             </span>{' '}
@@ -58,7 +58,7 @@ const ClimateHomeSection = () => {
               path="/climate"
               styling={cn(
                 buttonVariants({ size: 'lg' }),
-                'bg-green-500 hover:bg-green-500/70',
+                'bg-green-600 hover:bg-green-600/70',
               )}
             >
               Projekte
