@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import initTranslations from '@/lib/i18n';
 
-import heroImage from '@/public/imgs/heroImg-min.jpg';
+import heroImage from '@/public/imgs/heroImg-min.webp';
 import sustainabilityImg from '@/public/imgs/sustainability-leaf.jpg';
 
 import MaxWidthWrapper from '@/components/Wrappers/MaxWidthWrapper';

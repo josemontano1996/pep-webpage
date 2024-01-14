@@ -36,7 +36,7 @@ const ReadMore = () => {
         <p>
           Südamerika ist besonders bedroht von klimatischen Veränderungen wie
           der Zunahme des Niño-Phänomens und dem Abschmelzen der
-          Anden-Gletscher. Andererseits hat dieses Erdteil mit ca. 20% einen
+          Anden-Gletscher. Andererseits hat dieser Erdteil mit ca. 20% einen
           großen Anteil an der CO2-Bindung durch Vegetation weltweit, und ein
           enormes Potenzial für die Biomasseproduktion durch Aufforstung.{' '}
           <span className="font-bold">

@@ -14,7 +14,7 @@ const BankData = () => {
           <CopyButton copiedData={process.env.NEXT_PUBLIC_BIC_NUMBER!} />
         </p>
         <p className="flex gap-2">
-          <strong>Verein name:</strong>{' '}
+          <strong>Vereinsname:</strong>{' '}
           <span>{process.env.NEXT_PUBLIC_COMPANY_NAME}</span>
           <CopyButton copiedData={process.env.NEXT_PUBLIC_COMPANY_NAME!} />
         </p>
