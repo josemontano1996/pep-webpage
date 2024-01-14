@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 
 import MaxWidthWrapper from '@/components/Wrappers/MaxWidthWrapper';
@@ -7,7 +8,6 @@ import hoyacionPhoto from '@/public/imgs/hoyacion.jpg';
 import hoyacionPhoto2 from '@/public/imgs/hoyacion-2.jpg';
 import ventajasSociales from '@/public/imgs/ventajassociales.jpg';
 import DonateCallToAction from '@/components/DonateCallToAction';
-import { Metadata } from 'next';
 
 interface Props {
   params: { locale: string };

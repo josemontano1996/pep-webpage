@@ -26,7 +26,6 @@ import {
 } from '../ui/dialog';
 import { Textarea } from '../ui/textarea';
 import { useForm } from 'react-hook-form';
-import { address } from '@/consts/address';
 import { cn } from '@/lib/utils';
 
 const formSchema = z.object({
@@ -84,12 +83,16 @@ const BecomeMember = () => {
       <DialogContent className="z-50 border-primary/80">
         <DialogHeader>
           <DialogTitle className={cn('pb-3 text-center text-2xl font-medium')}>
-            Mitglied Anfrage {`(Unverbindlich)`}
+            Anfrage zur Mitgliedschaft
           </DialogTitle>
           <DialogDescription className="text-center">
             <p>{process.env.NEXT_PUBLIC_PEP_EMAIL}</p>
             <address>
-              {address.street}, {address.postal}, {address.city}
+              <p>{process.env.NEXT_PUBLIC_PEP_STREET}</p>
+              <p>
+                {process.env.NEXT_PUBLIC_PEP_POSTAL}{' '}
+                {process.env.NEXT_PUBLIC_PEP_CITY}
+              </p>
             </address>
           </DialogDescription>
         </DialogHeader>

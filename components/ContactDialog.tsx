@@ -11,6 +11,7 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
+  DialogTitle,
   DialogTrigger,
 } from './ui/dialog';
 import { Button, buttonVariants } from './ui/button';
@@ -25,8 +26,7 @@ import {
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { cn } from '@/lib/utils';
-import { DialogTitle } from '@radix-ui/react-dialog';
-import { address } from '@/consts/address';
+
 
 const formSchema = z.object({
   username: z
@@ -92,12 +92,16 @@ const ContactDialog = ({ triggerStyle = '' }: Props) => {
       <DialogContent className="z-50 border-primary/80">
         <DialogHeader>
           <DialogTitle className={cn('pb-3 text-center text-2xl font-medium')}>
-            Kontakt Form
+            Anfrage
           </DialogTitle>
           <DialogDescription className="text-center">
             <p>{process.env.NEXT_PUBLIC_PEP_EMAIL}</p>
             <address>
-              {address.street}, {address.postal}, {address.city}
+              <p>{process.env.NEXT_PUBLIC_PEP_STREET}</p>
+              <p>
+                {process.env.NEXT_PUBLIC_PEP_POSTAL}{' '}
+                {process.env.NEXT_PUBLIC_PEP_CITY}
+              </p>
             </address>
           </DialogDescription>
         </DialogHeader>

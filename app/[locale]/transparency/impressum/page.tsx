@@ -1,5 +1,5 @@
 import MaxWidthWrapper from '@/components/Wrappers/MaxWidthWrapper';
-import { address } from '@/consts/address';
+
 
 const page = () => {
   return (
@@ -9,7 +9,11 @@ const page = () => {
           <h1 className="text-2xl">Angaben gemäß § 5 TMG</h1>
           <p>
             Informationsstelle {process.env.NEXT_PUBLIC_COMPANY_NAME}{' '}
-            {address.street}, {address.postal}, {address.city}.
+            <p>{process.env.NEXT_PUBLIC_PEP_STREET}</p>
+            <p>
+              {process.env.NEXT_PUBLIC_PEP_POSTAL}{' '}
+              {process.env.NEXT_PUBLIC_PEP_CITY}
+            </p>
           </p>
           <h3 className="text-2xl">Vertreten durch:</h3>
           <p>Dr. Stefan Pappert, Ricardo Bueno.</p>
@@ -26,7 +30,7 @@ const page = () => {
             <a
               target="_blank"
               href="https://www.linkedin.com/in/josemanuelmontanomengual"
-              className="hover:underline text-blue-400"
+              className="text-blue-400 hover:underline"
             >
               Jose Manuel Montano Mengual
             </a>
