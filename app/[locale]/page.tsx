@@ -29,7 +29,7 @@ export async function generateMetadata({
 }
 
 export default async function HomePage({ params: { locale } }: Props) {
-/*   const { t } = await initTranslations(locale, ['home']); */
+  /*   const { t } = await initTranslations(locale, ['home']); */
 
   return (
     <>
@@ -60,7 +60,7 @@ export default async function HomePage({ params: { locale } }: Props) {
               <p className="text-center sm:text-xl">
                 PEP e. V.{' '}
                 <span className="font-semibold text-primary">{`(Projekte für Entwicklungsförderung in Peru und Lateinamerika)`}</span>{' '}
-                st ein gemeinnütziger Verein, der am 22. Februar 2002 in Trier
+                ist ein gemeinnütziger Verein, der am 22. Februar 2002 in Trier
                 gegründet wurde. Dessen Absicht ist die{' '}
                 <span className="font-semibold text-primary">
                   Förderung der sozialen und ökonomischen Entwicklung,
@@ -87,7 +87,7 @@ export default async function HomePage({ params: { locale } }: Props) {
               </div>
               <div className="flex-col justify-end space-y-4 p-6 text-center sm:text-left sm:text-lg xl:my-auto xl:p-0 xl:pb-2">
                 <p>
-                  Unsere Arbeit dreht sich um Unsere Arbeit dreht sich um die{' '}
+                  Unsere Arbeit dreht sich um die{' '}
                   <span className="font-semibold text-primary">
                     die soziale und ökonomische nachhaltige Entwicklung.
                   </span>{' '}
@@ -98,7 +98,7 @@ export default async function HomePage({ params: { locale } }: Props) {
                   verstehen wir die Verbesserung der individuellen
                   Lebensbedingungen und die positive Veränderung der sozialen,
                   wirtschaftlichen und politischen Strukturen, ohne die keine
-                  sozialer Entwicklung Nachhaltigkeit gewährleistet ist.{' '}
+                  nachhaltige soziale Entwicklung gewährleistet ist.{' '}
                 </p>
                 <p>
                   Aus Sicht{' '}
@@ -106,7 +106,7 @@ export default async function HomePage({ params: { locale } }: Props) {
                     von PEP ist ökonomische Entwicklung viel mehr als
                     wirtschaftliches Wachstum,{' '}
                   </span>
-                  denn dieses hat einen Sinn, nur wenn es von einer gerechteren
+                  denn dieses hat nur einen Sinn, wenn es von einer gerechteren
                   Verteilung der wirtschaftlichen Erfolge innerhalb der
                   Bevölkerung und die langfristige Erhaltung der Ressourcen
                   begleitet wird. Nachhaltige Entwicklung bedeutet, die
@@ -137,8 +137,8 @@ export default async function HomePage({ params: { locale } }: Props) {
           </section>
           <section className="pt-20 text-center">
             <p>
-              Wir brauchen Ihre Hilfe, um die Welt weiterhin zu einem besseren
-              und nachhaltigen Ort zu machen, bitte uns zu spenden.
+              Um die Welt weiterhin zu einem besseren und nachhaltigen Ort zu
+              machen, brauchen wir Ihre Hilfe.
             </p>
             <DonateCallToAction />
           </section>

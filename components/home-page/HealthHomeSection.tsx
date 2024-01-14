@@ -20,8 +20,8 @@ const HealthHomeSection = () => {
         </div>
         <div className="flex flex-1 flex-col items-center justify-between space-y-4 sm:text-lg lg:text-left">
           <p>
-            Die Mehrheit der peruanischen Bevölkerung hat keinen Zugang zu
-            angemessenen Gesundheitsversorgung, oft nicht einmal zu den
+            Die Mehrheit der peruanischen Bevölkerung hat keinen Zugang zu einer
+            angemessenen Gesundheitsversorgung, oft nicht einmal zu der
             grundlegendsten.
           </p>
           <p>

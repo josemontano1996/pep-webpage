@@ -31,8 +31,7 @@ const ReadMore = () => {
           <span className="font-bold">
             Man spricht von Klimawandel und humanitäre Krise. Dieser droht die
             Existenzgrundlagen der globalen Gesellschaft
-          </span>{' '}
-          , negativ zu beeinflussen oder sogar zu zerstören.
+          </span>{' '}negativ zu beeinflussen oder sogar zu zerstören.
         </p>
         <p>
           Südamerika ist besonders bedroht von klimatischen Veränderungen wie

@@ -163,12 +163,12 @@ const ContactDialog = ({ triggerStyle = '' }: Props) => {
               )}
             />
             <div className="flex justify-between">
-              <Button type="submit">Submit</Button>
+              <Button type="submit">Senden</Button>
               <DialogClose
                 className={cn(buttonVariants({ variant: 'ghost' }))}
                 ref={closeButton}
               >
-                Close
+                Schließen
               </DialogClose>
             </div>
           </form>

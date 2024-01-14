@@ -16,7 +16,6 @@ interface Props {
 export async function generateMetadata({
   params: { locale },
 }: Props): Promise<Metadata> {
-
   return {
     title: 'Aufforstungsprojekt in Cajamarca - PEP e.V.',
     description:
@@ -69,7 +68,7 @@ const ClimatePage = () => {
             </div>
 
             <div>
-              <h3 className="mb-1 text-2xl">BENEFIZIENTE BEVÖLKERUNG</h3>
+              <h3 className="mb-1 text-2xl">WER PROFITIERT VON DEM PROJEKT?</h3>
               <p>
                 Direkte Begünstigte des Projekts in der Kampagne 2023/24 sind 65
                 Familien {`(etwa 300 Personen)`} Indirekt wird die gesamte
@@ -92,19 +91,19 @@ const ClimatePage = () => {
         </div>
       </section>
       <section id="advantajes" className="space-y-6 pb-12 pt-14">
-        <h3 className="text-2xl">PROJEKTVORTEILE</h3>
+        <h3 className="text-2xl">POSITIVE EFFEKTE</h3>
 
         <div>
           <h5 className="mb-1 text-xl">VORTEILE FÜR DIE UMWELT</h5>
           <p>
             Durch das Pflanzen von Bäumen wird Kohlendioxid aus der Atmosphäre
             gebunden, um den Treibhauseffekt zu reduzieren und so der globalen
-            Erwärmung entgegenzuwirken. Auf diese Weise wollen wir die negativen
-            Auswirkungen des Klimawandels vermeiden: Dürren, extreme Regenfälle,
-            Frost, Überschwemmungen usw. Ebenso wird der Erosion von Hangböden
-            vorgebeugt, die Grundwasserversorgung verbessert und die Fauna
-            vielfältiger. Aufforstung kann auch gegen die Abholzung
-            einheimischer Urwälder mitwirken.
+            Erwärmung entgegenzuwirken. Auf diese Weise wollen wir den negativen
+            Auswirkungen des Klimawandels entgegenwirken: Dürren, extreme
+            Regenfälle, Frost, Überschwemmungen usw. Ebenso wird der Erosion von
+            Hangböden vorgebeugt, die Grundwasserversorgung verbessert und die
+            Fauna vielfältiger. Die Aufforstung kann auch dazu beitragen, die
+            Abholzung einheimischer Urwälder zu vermindern.
           </p>
         </div>
         <div>
@@ -112,7 +111,11 @@ const ClimatePage = () => {
           <div className="lg:grid lg:grid-cols-12 lg:items-center lg:gap-8">
             <div className="space-y-4 lg:col-span-6">
               <div className="col-span-6 lg:hidden">
-                <Image src={ventajasSociales} alt="Soziale Vorteile" className="rounded-xl" />
+                <Image
+                  src={ventajasSociales}
+                  alt="Soziale Vorteile"
+                  className="rounded-xl"
+                />
               </div>
               <p>
                 Ziel des Projekts ist auch, die Lebensbedingungen der
@@ -133,7 +136,11 @@ const ClimatePage = () => {
               </p>
             </div>
             <div className="hidden lg:col-span-6 lg:block">
-              <Image src={ventajasSociales} alt="Soziale Vorteile" className="rounded-xl" />
+              <Image
+                src={ventajasSociales}
+                alt="Soziale Vorteile"
+                className="rounded-xl"
+              />
             </div>
           </div>
         </div>
@@ -153,25 +160,18 @@ const ClimatePage = () => {
         </div>
       </section>
       <section id="planting" className="space-y-6">
-        <div>
-          <h3 className="mb-1 text-2xl">ANPFLANZUNG</h3>
-          <p>
-            Durch das Pflanzen von Bäumen wird Kohlendioxid aus der Atmosphäre
-            gebunden, um den Treibhauseffekt zu reduzieren und so der globalen
-            Erwärmung entgegenzuwirken. Auf diese Weise wollen wir die negativen
-            Auswirkungen des Klimawandels vermeiden: Dürren, extreme Regenfälle,
-            Frost, Überschwemmungen usw. Ebenso wird der Erosion von Hangböden
-            vorgebeugt, die Grundwasserversorgung verbessert und die Fauna
-            vielfältiger. Aufforstung kann auch gegen die Abholzung
-            einheimischer Urwälder mitwirken.
-          </p>
-        </div>
+        <h3 className="mb-1 text-2xl">ANPFLANZUNG</h3>
+
         <div className="items-center lg:grid lg:grid-cols-12 lg:gap-6">
           <div className="space-y-4 lg:col-span-6">
             <div className="space-y-4">
               <h5 className="mb-1 text-xl">AUSWAHL DER BAUMART</h5>
               <div className="col-span-6 block lg:hidden">
-                <Image src={viveroPhoto} alt="Anplanzung" className="rounded-xl" />
+                <Image
+                  src={viveroPhoto}
+                  alt="Anplanzung"
+                  className="rounded-xl"
+                />
               </div>
               <p>
                 Baumart: Radiata-Kiefer{' '}
@@ -195,7 +195,7 @@ const ClimatePage = () => {
                 Der Erfolg einer Waldpflanzung hängt in erster Linie von der
                 guten Qualität des Pflanzguts ab; diese muss unter besten
                 Bedingungen produziert werden. Die Pflanzen kommen aus einer
-                spezialisierten Baumschule , die die Verwendung von ausgewähltem
+                spezialisierten Baumschule, die die Verwendung von ausgewähltem
                 Saatgut, die besten Substrate für Beete, die Mykorrhizierung der
                 Wurzeln, sowie die beste Gesundheitsbedingungen der Jungbäume
                 garantiert. Mit einer durchschnittlichen Höhe von 25 cm. gehen

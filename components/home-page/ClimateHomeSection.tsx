@@ -46,7 +46,7 @@ const ClimateHomeSection = () => {
               Aufforstung zur aktiven Entnahme von Kohlendioxid aus der
               Atmosphäre
             </span>{' '}
-            beitragen, und dadurch die negative Auswirkungen der Klimakrise
+            beitragen, und dadurch die negativen Auswirkungen der Klimakrise
             weltweit abmildern. Damit verbessern wir auch die wirtschaftliche,
             soziale und ökologische Bedingungen der Familien, die sich direkt an
             den Projekt beteiligen, aber auch deren der Nachbarschaft.{' '}
