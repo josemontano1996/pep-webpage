@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { useRef } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -27,7 +28,6 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { cn } from '@/lib/utils';
 
-
 const formSchema = z.object({
   username: z
     .string()
@@ -46,6 +46,7 @@ type Props = {
 };
 
 const ContactDialog = ({ triggerStyle = '' }: Props) => {
+  const { t } = useTranslation();
   const closeButton = useRef<HTMLButtonElement | null>(null);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -87,12 +88,12 @@ const ContactDialog = ({ triggerStyle = '' }: Props) => {
   return (
     <Dialog>
       <DialogTrigger className={cn('hover:cursor-pointer', triggerStyle)}>
-        Kontakt
+        {t('kontakt')}
       </DialogTrigger>
       <DialogContent className="z-50 border-primary/80">
         <DialogHeader>
           <DialogTitle className={cn('pb-3 text-center text-2xl font-medium')}>
-            Anfrage
+            {t('anfrage')}
           </DialogTitle>
           <DialogDescription className="text-center">
             <p>{process.env.NEXT_PUBLIC_PEP_EMAIL}</p>
@@ -115,7 +116,7 @@ const ContactDialog = ({ triggerStyle = '' }: Props) => {
               name="username"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>{t('name')}</FormLabel>
                   <FormControl>
                     <Input placeholder="" {...field} />
                   </FormControl>
@@ -128,7 +129,7 @@ const ContactDialog = ({ triggerStyle = '' }: Props) => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>{t('email')}</FormLabel>
                   <FormControl>
                     <Input placeholder="" {...field} />
                   </FormControl>
@@ -141,7 +142,7 @@ const ContactDialog = ({ triggerStyle = '' }: Props) => {
               name="subject"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Betreff</FormLabel>
+                  <FormLabel>{t('betreff')}</FormLabel>
                   <FormControl>
                     <Input placeholder="" {...field} />
                   </FormControl>
@@ -154,7 +155,7 @@ const ContactDialog = ({ triggerStyle = '' }: Props) => {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Nachricht</FormLabel>
+                  <FormLabel>{t('nachricht')}</FormLabel>
                   <FormControl>
                     <Textarea
                       {...field}
@@ -167,12 +168,12 @@ const ContactDialog = ({ triggerStyle = '' }: Props) => {
               )}
             />
             <div className="flex justify-between">
-              <Button type="submit">Senden</Button>
+              <Button type="submit">{t('senden')}</Button>
               <DialogClose
                 className={cn(buttonVariants({ variant: 'ghost' }))}
                 ref={closeButton}
               >
-                Schließen
+                {t('close')}
               </DialogClose>
             </div>
           </form>

@@ -7,23 +7,23 @@ import {
 } from '@/components/ui/card';
 import BankData from './BankData';
 import { SEPADialog } from './SEPADialog';
+import initTranslations from '@/lib/i18n';
 
-export default function DonationCard() {
-  //TODO: add Sepa documents
+export default async function DonationCard({ locale }: { locale: string }) {
+  const { t } = await initTranslations(locale, ['donate-page']);
   return (
     <Card
       id="bank"
       className="flex h-full flex-col justify-between sm:w-[550px] xl:w-[350px]"
     >
       <CardHeader>
-        <CardTitle className="mb-2">Banküberweisung</CardTitle>
+        <CardTitle className="mb-2">{t('1-2')}</CardTitle>
         <CardDescription>
-          Überweisen Sie einfach Ihre Spende oder richten Sie einen Dauerauftrag
-          bei Ihrer Bank auf folgendes Konto ein oder <SEPADialog />
+          {t('1-3')} <SEPADialog locale={locale} />
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <BankData />
+        <BankData locale={locale} />
       </CardContent>
     </Card>
   );

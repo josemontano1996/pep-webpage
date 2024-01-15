@@ -27,6 +27,7 @@ import {
 import { Textarea } from '../ui/textarea';
 import { useForm } from 'react-hook-form';
 import { cn } from '@/lib/utils';
+import { useTranslation } from 'react-i18next';
 
 const formSchema = z.object({
   username: z
@@ -39,6 +40,7 @@ const formSchema = z.object({
 });
 
 const BecomeMember = () => {
+  const { t } = useTranslation();
   const closeButton = useRef<HTMLButtonElement | null>(null);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -78,12 +80,12 @@ const BecomeMember = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Mitglied werden</Button>
+        <Button>{t('become-member')}</Button>
       </DialogTrigger>
       <DialogContent className="z-50 border-primary/80">
         <DialogHeader>
           <DialogTitle className={cn('pb-3 text-center text-2xl font-medium')}>
-            Anfrage zur Mitgliedschaft
+            {t('become-member-anfrage')}
           </DialogTitle>
           <DialogDescription className="text-center">
             <p>{process.env.NEXT_PUBLIC_PEP_EMAIL}</p>
@@ -106,7 +108,7 @@ const BecomeMember = () => {
               name="username"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>{t('name')}</FormLabel>
                   <FormControl>
                     <Input placeholder="" {...field} />
                   </FormControl>
@@ -119,7 +121,7 @@ const BecomeMember = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>{t('email')}</FormLabel>
                   <FormControl>
                     <Input placeholder="" {...field} />
                   </FormControl>
@@ -132,7 +134,7 @@ const BecomeMember = () => {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Nachricht</FormLabel>
+                  <FormLabel>{t('nachricht')}</FormLabel>
                   <FormControl>
                     <Textarea
                       {...field}
@@ -145,10 +147,10 @@ const BecomeMember = () => {
               )}
             />
             <div className="flex justify-between">
-              <Button type="submit">Senden</Button>
+              <Button type="submit">{t('senden')}</Button>
               <DialogClose asChild>
                 <Button type="button" variant={'ghost'} ref={closeButton}>
-                  Schließen
+                  {t('close')}
                 </Button>
               </DialogClose>
             </div>
