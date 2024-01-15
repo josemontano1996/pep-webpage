@@ -1,3 +1,5 @@
+'use client';
+
 import { SmoothScrollLink } from '@/components/SmoothScrollToIdElement';
 import {
   MenubarContent,
@@ -5,26 +7,28 @@ import {
   MenubarMenu,
   MenubarTrigger,
 } from '../../ui/menubar';
+import { useTranslation } from 'react-i18next';
 
 const HomeIndexDesktop = () => {
+  const { t } = useTranslation();
   return (
     <>
       <MenubarMenu>
-        <MenubarTrigger>Über uns</MenubarTrigger>
+        <MenubarTrigger>{t('uber-uns')}</MenubarTrigger>
         <MenubarContent>
           <MenubarItem>
             <SmoothScrollLink scrollToId="about">
-              Wer sind wir?
+              {t('wer-sind-wir')}
             </SmoothScrollLink>
           </MenubarItem>
           <MenubarItem>
             <SmoothScrollLink scrollToId="goals">
-              Was bewegt uns?
+              {t('was-bewegt-uns')}
             </SmoothScrollLink>
           </MenubarItem>
           <MenubarItem>
             <SmoothScrollLink scrollToId="projects">
-              Was machen wir?
+              {t('was-machen-wir')}
             </SmoothScrollLink>
           </MenubarItem>
         </MenubarContent>

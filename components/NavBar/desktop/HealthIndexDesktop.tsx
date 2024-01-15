@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { SmoothScrollLink } from '@/components/SmoothScrollToIdElement';
 import {
   MenubarContent,
@@ -7,19 +8,18 @@ import {
 } from '@/components/ui/menubar';
 
 const HealthIndexDesktop = () => {
+  const { t } = useTranslation();
   return (
     <MenubarMenu>
-      <MenubarTrigger>Index</MenubarTrigger>
+      <MenubarTrigger>{t('index')}</MenubarTrigger>
       <MenubarContent>
         <MenubarItem>
           <SmoothScrollLink scrollToId="surgery">
-            Rekonstruktive Chirurgie
+            {t('chirurgie')}
           </SmoothScrollLink>
         </MenubarItem>
         <MenubarItem>
-          <SmoothScrollLink scrollToId="oxigen">
-            Sauerstoffeanlage
-          </SmoothScrollLink>
+          <SmoothScrollLink scrollToId="oxigen">{t('oxigen')}</SmoothScrollLink>
         </MenubarItem>
       </MenubarContent>
     </MenubarMenu>

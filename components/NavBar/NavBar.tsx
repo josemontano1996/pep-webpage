@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import initTranslations from '@/lib/i18n';
 import LeftNav from './LeftNavBar';
 import ContactDialog from '../ContactDialog';
+import LocaleSelector from '../translations/LocaleSelector';
 
 const NavBar = async ({ locale }: { locale: string }) => {
   const { t } = await initTranslations(locale, ['shared']);
@@ -16,11 +17,7 @@ const NavBar = async ({ locale }: { locale: string }) => {
       </nav>
       <h1>
         <LocaleLink path={'/'}>
-          <Image
-            src={LogoImg}
-            alt="Logo Image"
-            className=" h-10 w-auto sm:h-12"
-          />
+          <Image src={LogoImg} alt="Logo" className=" h-10 w-auto sm:h-12" />
         </LocaleLink>
       </h1>
       <ul className="flex flex-1 items-center justify-end gap-6 pr-[2vw] lg:p-0">
@@ -35,12 +32,12 @@ const NavBar = async ({ locale }: { locale: string }) => {
               'text-sm xl:text-lg text-xs sm:text-base',
             )}
           >
-            Spenden
+            {t('donate-cta')}
           </LocaleLink>
         </li>
-        {/*  <li className="hidden sm:block">
+        <li className="hidden sm:block">
           <LocaleSelector />
-        </li> */}
+        </li>
       </ul>
     </header>
   );

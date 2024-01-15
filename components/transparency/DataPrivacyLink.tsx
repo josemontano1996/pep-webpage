@@ -1,11 +1,12 @@
+import initTranslations from '@/lib/i18n';
 
-
-const DataPrivacyLink = () => {
+const DataPrivacyLink = async ({ locale }: { locale: string }) => {
+  const { t } = await initTranslations(locale, ['footer']);
   return (
     <a target="_blank" href="/pdf/datenschutz-PEP.pdf">
-      Datenschutz- und Cookie-Richtlinie
+      {t('privacy-policy')}
     </a>
   );
-}
+};
 
-export default DataPrivacyLink
+export default DataPrivacyLink;

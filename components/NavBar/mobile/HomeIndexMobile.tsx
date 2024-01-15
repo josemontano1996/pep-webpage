@@ -1,3 +1,5 @@
+'use client';
+
 import { SmoothScrollLink } from '@/components/SmoothScrollToIdElement';
 import {
   MenubarItem,
@@ -5,26 +7,28 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
 } from '@/components/ui/menubar';
+import { useTranslation } from 'react-i18next';
 
 const HomeIndexMobile = () => {
+  const { t } = useTranslation();
   return (
     <>
       <MenubarSub>
-        <MenubarSubTrigger>Über uns</MenubarSubTrigger>
+        <MenubarSubTrigger>{t('uber-uns')}</MenubarSubTrigger>
         <MenubarSubContent>
           <MenubarItem>
             <SmoothScrollLink scrollToId="about">
-              Wer sind wir?
+              {t('wer-sind-wir')}
             </SmoothScrollLink>
           </MenubarItem>
           <MenubarItem>
             <SmoothScrollLink scrollToId="goals">
-              Was bewegt uns?
+              {t('was-bewegt-uns')}
             </SmoothScrollLink>
           </MenubarItem>
           <MenubarItem>
             <SmoothScrollLink scrollToId="projects">
-              Was machen wir?
+              {t('was-machen-wir')}
             </SmoothScrollLink>
           </MenubarItem>
         </MenubarSubContent>

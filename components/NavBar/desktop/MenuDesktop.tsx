@@ -8,34 +8,35 @@ import {
 import DesktopNavbarIndexProvider from './DesktopNavBarIndexProvider';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import DataPrivacyLink from '@/components/transparency/DataPrivacyLink';
+import initTranslations from '@/lib/i18n';
 
-const MenuDesktop = ({ locale }: { locale: string }) => {
+const MenuDesktop = async ({ locale }: { locale: string }) => {
+  const { t } = await initTranslations(locale, ['shared']);
   return (
     <Menubar className={cn('hidden lg:flex')}>
       <DesktopNavbarIndexProvider />
       <MenubarMenu>
-        <MenubarTrigger>Was machen wir?</MenubarTrigger>
+        <MenubarTrigger>{t('r-2-title')}</MenubarTrigger>
         <MenubarContent>
           <MenubarItem asChild>
-            <Link href={`/${locale}/climate`}>Für die Umwelt</Link>
+            <Link href={`/${locale}/climate`}>{t('r-2-1')}</Link>
           </MenubarItem>
           <MenubarItem asChild>
-            <Link href={`/${locale}/health`}>Für die Gesundheit</Link>
+            <Link href={`/${locale}/health`}>{t('r-2-2')}</Link>
           </MenubarItem>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>Transparenz</MenubarTrigger>
+        <MenubarTrigger>{t('r-3-title')}</MenubarTrigger>
         <MenubarContent>
           <MenubarItem>
             <a href="/pdf/freistellungsbescheid-2021.pdf" target="_blank">
-              Gemeinnützigkeit
+              {t('r-3-1')}
             </a>
-          </MenubarItem>       
+          </MenubarItem>
         </MenubarContent>
       </MenubarMenu>
-      <MenubarMenu></MenubarMenu>
+
     </Menubar>
   );
 };

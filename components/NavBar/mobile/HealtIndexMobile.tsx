@@ -1,3 +1,4 @@
+'use client';
 import { SmoothScrollLink } from '@/components/SmoothScrollToIdElement';
 import {
   MenubarItem,
@@ -5,21 +6,21 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
 } from '@/components/ui/menubar';
+import { useTranslation } from 'react-i18next';
 
 const HealtIndexMobile = () => {
+  const { t } = useTranslation();
   return (
     <MenubarSub>
-      <MenubarSubTrigger>Index</MenubarSubTrigger>
+      <MenubarSubTrigger>{t('index')}</MenubarSubTrigger>
       <MenubarSubContent>
         <MenubarItem>
           <SmoothScrollLink scrollToId="surgery">
-            Rekonstruktive Chirurgie
+            {t('chirurgie')}
           </SmoothScrollLink>
         </MenubarItem>
         <MenubarItem>
-          <SmoothScrollLink scrollToId="oxigen">
-            Sauerstoffeanlage
-          </SmoothScrollLink>
+          <SmoothScrollLink scrollToId="oxigen">{t('oxigen')}</SmoothScrollLink>
         </MenubarItem>
       </MenubarSubContent>
     </MenubarSub>

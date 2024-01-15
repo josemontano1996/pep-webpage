@@ -14,8 +14,10 @@ import MobileNavbarIndexProvider from './MobileNavBarIndexProvider';
 import LocaleSelector from '@/components/translations/LocaleSelector';
 import { Menu } from 'lucide-react';
 import ContactDialog from '@/components/ContactDialog';
+import initTranslations from '@/lib/i18n';
 
-const MenuMobile = ({ locale }: { locale: string }) => {
+const MenuMobile = async ({ locale }: { locale: string }) => {
+  const { t } = await initTranslations(locale, ['shared']);
   return (
     <Menubar className={cn('lg:hidden')}>
       <MenubarMenu>
@@ -25,34 +27,34 @@ const MenuMobile = ({ locale }: { locale: string }) => {
         <MenubarContent className={cn('pl-[2vw]')}>
           <MobileNavbarIndexProvider />
           <MenubarSub>
-            <MenubarSubTrigger>Was machen wir?</MenubarSubTrigger>
+            <MenubarSubTrigger>{t('was-machen-wir')}</MenubarSubTrigger>
             <MenubarSubContent>
               <MenubarItem asChild>
-                <Link href={`/${locale}/climate`}>Für die Umwelt</Link>
+                <Link href={`/${locale}/climate`}>{t('r-2-1')}</Link>
               </MenubarItem>
               <MenubarItem asChild>
-                <Link href={`/${locale}/health`}>Für die Gesundheit</Link>
+                <Link href={`/${locale}/health`}>{t('r-2-2')}</Link>
               </MenubarItem>
             </MenubarSubContent>
           </MenubarSub>
           <MenubarSub>
-            <MenubarSubTrigger>Transparenz</MenubarSubTrigger>
+            <MenubarSubTrigger>{t('r-3-title')}</MenubarSubTrigger>
             <MenubarSubContent>
               <MenubarItem>
                 <a href="/pdf/freistellungsbescheid-2021.pdf" target="_blank">
-                  Gemeinnützigkeit
+                  {t('r-3-1')}
                 </a>
               </MenubarItem>
             </MenubarSubContent>
           </MenubarSub>
           <MenubarItem asChild>
-            <ContactDialog triggerStyle='text-sm pl-2 py-1'/>
+            <ContactDialog triggerStyle="text-sm pl-2 py-1" />
           </MenubarItem>
-         {/*  <MenubarSub>
+          <MenubarSub>
             <div className="flex flex-col items-center pt-2 sm:hidden">
               <LocaleSelector />
             </div>
-          </MenubarSub> */}
+          </MenubarSub>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>

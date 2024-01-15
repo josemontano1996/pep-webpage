@@ -17,19 +17,16 @@ interface Props {
 export async function generateMetadata({
   params: { locale },
 }: Props): Promise<Metadata> {
-  const { t } = await initTranslations(locale, ['home']);
+  const { t } = await initTranslations(locale, ['home-page']);
   return {
-    title:
-      'PEP e.V. - Projekte für Entwicklungsförderung in Peru und Lateinamerika',
-    description:
-      'PEP e.V. - Gemeinnütziger Verein mit Sitz in Trier, der Aufforstungs- und Gesundheitsprojekte für Bedürftige in Peru durchführt.',
-    keywords:
-      'PEP e.V., Trier, Peru, gemeinnütziger Verein, Projekte, Gesundheitshilfe, Armut, Unterstützung, Planung, Hilfe, Klimawandel',
+    title: t('meta-title'),
+    description: t('meta-description'),
+    keywords: t('meta-keywords'),
   };
 }
 
 export default async function HomePage({ params: { locale } }: Props) {
-  /*   const { t } = await initTranslations(locale, ['home']); */
+  const { t } = await initTranslations(locale, ['home-page']);
 
   return (
     <>
@@ -37,12 +34,12 @@ export default async function HomePage({ params: { locale } }: Props) {
         <Image
           src={heroImage}
           fill
-          alt={'foto von unserem team in peru'}
+          alt={t('hero-img-alt')}
           className="object-cover"
         />
         <div className="absolute top-1/4 translate-y-[-60%] transform text-center">
           <h1 className="flex w-screen justify-center text-4xl font-bold text-white sm:text-5xl ">
-            {`"PEP für eine nachhaltigere Welt"`}
+            {t('hero-title')}
           </h1>
         </div>
       </section>
@@ -54,17 +51,16 @@ export default async function HomePage({ params: { locale } }: Props) {
                 id="about"
                 className="mb-8 text-center text-3xl font-semibold sm:text-4xl"
               >
-                WER SIND WIR?
+                {t('s-1-title')}
               </h2>
               <p className="text-center sm:text-xl">
-                PEP e. V.{' '}
-                <span className="font-semibold text-primary">{`(Projekte für Entwicklungsförderung in Peru und Lateinamerika)`}</span>{' '}
-                ist ein gemeinnütziger Verein, der am 22. Februar 2002 in Trier
-                gegründet wurde. Dessen Absicht ist die{' '}
+                {t('s-1-b1')}{' '}
                 <span className="font-semibold text-primary">
-                  Förderung der sozialen und ökonomischen Entwicklung,
-                  Gesundheit, Bildung, Kulturund Umweltschutz in Peru und
-                  Lateinamerika.
+                  {t('s-1-b2')}
+                </span>{' '}
+                {t('s-1-b3')}{' '}
+                <span className="font-semibold text-primary">
+                  {t('s-1-b4')}
                 </span>
               </p>
             </article>
@@ -74,7 +70,7 @@ export default async function HomePage({ params: { locale } }: Props) {
             className="relative my-20 bg-lime-100 pt-4 sm:ml-[10vw] sm:max-w-[90vw] xl:pt-20"
           >
             <h2 className="mb-8 transform text-center text-4xl xl:absolute xl:left-1/2 xl:top-3 xl:-translate-x-1/2">
-              Was bewegt uns?
+              {t('s-2-title')}
             </h2>
             <div className="grid-cols-2 justify-items-center gap-10 sm:w-[80vw] xl:grid">
               <div className="sm:w-4/5 xl:flex xl:h-full xl:w-full xl:flex-col xl:justify-end">
@@ -86,35 +82,24 @@ export default async function HomePage({ params: { locale } }: Props) {
               </div>
               <div className="flex-col justify-end space-y-4 p-6 text-center sm:text-left sm:text-lg xl:my-auto xl:p-0 xl:pb-2">
                 <p>
-                  Unsere Arbeit dreht sich um die{' '}
+                  {t('s-2-b1')}{' '}
                   <span className="font-semibold text-primary">
-                    die soziale und ökonomische nachhaltige Entwicklung.
+                    {t('s-2-b2')}{' '}
                   </span>{' '}
-                  Unter{' '}
+                  {t('s-2-b3')}{' '}
                   <span className="font-semibold text-primary">
-                    sozialer Entwicklung
+                    {t('s-2-b4')}
                   </span>{' '}
-                  verstehen wir die Verbesserung der individuellen
-                  Lebensbedingungen und die positive Veränderung der sozialen,
-                  wirtschaftlichen und politischen Strukturen, ohne die keine
-                  nachhaltige soziale Entwicklung gewährleistet ist.{' '}
+                  {t('s-2-b5')}{' '}
                 </p>
                 <p>
-                  Aus Sicht{' '}
+                  {t('s-2-b6')}{' '}
                   <span className="font-semibold text-primary">
-                    von PEP ist ökonomische Entwicklung viel mehr als
-                    wirtschaftliches Wachstum,{' '}
+                    {t('s-2-b7')}{' '}
                   </span>
-                  denn dieses hat nur einen Sinn, wenn es von einer gerechteren
-                  Verteilung der wirtschaftlichen Erfolge innerhalb der
-                  Bevölkerung und die langfristige Erhaltung der Ressourcen
-                  begleitet wird. Nachhaltige Entwicklung bedeutet, die
-                  Bedürfnisse der Gegenwart so zu befriedigen, dass die
-                  Möglichkeiten zukünftiger Generationen nicht eingeschränkt
-                  werden.{' '}
+                  {t('s-2-b8')}{' '}
                   <span className="font-semibold text-primary">
-                    Nachhaltigkeit impliziert wirtschaftliche Effizienz, soziale
-                    Gerechtigkeit und ökologische Tragfähigkeit.
+                    {t('s-2-b9')}
                   </span>
                 </p>
               </div>
@@ -127,19 +112,16 @@ export default async function HomePage({ params: { locale } }: Props) {
               id="projects"
               className="mb-10 text-center text-3xl font-semibold sm:text-4xl"
             >
-              Was machen wir?
+              {t('s-3-title')}{' '}
             </h2>
             <div className="flex flex-col space-y-16">
-              <ClimateHomeSection />
-              <HealthHomeSection />
+              <ClimateHomeSection locale={locale} />
+              <HealthHomeSection locale={locale} />
             </div>
           </section>
-          <section className="pt-20 text-center">
-            <p>
-              Um die Welt weiterhin zu einem besseren und nachhaltigen Ort zu
-              machen, brauchen wir Ihre Hilfe.
-            </p>
-            <DonateCallToAction />
+          <section className="pt-20 text-center text-xl">
+            <p>{t('s-4-b1')}</p>
+            <DonateCallToAction locale={locale} />
           </section>
         </MaxWidthWrapper>
       </div>

@@ -1,5 +1,5 @@
 const i18nConfig = {
-  locales: ['de'/* , 'es', 'en' */],
+  locales: ['de' , 'es', 'en' ],
   defaultLocale: 'de',
   routingStrategy: 'dynamicSegment',
   prefixDefault: 'de',

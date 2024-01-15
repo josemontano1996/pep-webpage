@@ -1,5 +1,3 @@
-'use client';
-
 import MenuDesktop from './desktop/MenuDesktop';
 import MobileMenu from './mobile/MenuMobile';
 

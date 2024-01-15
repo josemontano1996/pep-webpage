@@ -6,51 +6,36 @@ import ReadMore from '../ReadMore';
 import LocaleLink from '../translations/LocaleLink';
 import { buttonVariants } from '../ui/button';
 import forestImg from '@/public/imgs/forest-1.png';
+import initTranslations from '@/lib/i18n';
 
-const ClimateHomeSection = () => {
+const ClimateHomeSection = async ({ locale }: { locale: string }) => {
+  const { t } = await initTranslations(locale, ['home-climate-section']);
   return (
     <div className="flex flex-col justify-between space-y-7">
       <div className="mx-auto flex items-center gap-2 text-xl font-semibold text-green-600 sm:text-3xl lg:mx-0 lg:justify-end ">
         <span>
           <Trees />
         </span>
-        <h3>Für die Umwelt und Klimawandel</h3>
+        <h3>{t('title')}</h3>
       </div>
       <div className="gap-8 space-y-4 lg:flex lg:space-y-0">
         <div className="my-auto flex-1">
-          <Image src={forestImg} alt={'Umwelt foto'} className="rounded-xl" />
+          <Image src={forestImg} alt={t('section-img-alt')} className="rounded-xl" />
         </div>
         <div className="flex flex-1 flex-col items-center justify-between space-y-4 sm:text-lg lg:text-left">
           <p>
-            <span className="font-semibold text-green-500">
-              {' '}
-              Die Erderwärmung schreitet immer schneller voran{' '}
-            </span>
-            und ist durch Veränderungen im Klimasystem in allen Regionen der
-            Welt spürbar. Die Auswirkungen der globalen Erwärmung wegen des
-            Treibhauseffektes werden immer stärker und{' '}
-            <span className="font-semibold text-green-500">
-              es ist dringend erforderlich, die CO2-Konzentration in der
-              Atmosphäre zu reduzieren.{' '}
-            </span>
-            Die Reduktion der CO2-Emissionen wird dafür nicht reichen, man
-            braucht eine aktive Entnahme von Kohlendioxid aus der Atmosphäre.
-            Darüber besteht Einigkeit in der Wissenschaft.{' '}
+            <span className="font-semibold text-green-500"> {t('b1')} </span>
+            {t('b2')}{' '}
+            <span className="font-semibold text-green-500">{t('b3')} </span>
+            {t('b4')}{' '}
             <span className="xl:hidden">
-              <ReadMore />
+              <ReadMore locale={locale} />
             </span>
           </p>
           <p className="hidden xl:block">
-            Wir wollen durch{' '}
-            <span className="font-semibold text-green-500">
-              Aufforstung zur aktiven Entnahme von Kohlendioxid aus der
-              Atmosphäre
-            </span>{' '}
-            beitragen, und dadurch die negativen Auswirkungen der Klimakrise
-            weltweit abmildern. Damit verbessern wir auch die wirtschaftliche,
-            soziale und ökologische Bedingungen der Familien, die sich direkt an
-            den Projekt beteiligen, aber auch deren der Nachbarschaft.{' '}
-            <ReadMore />
+            {t('b5')}{' '}
+            <span className="font-semibold text-green-500">{t('b6')}</span>{' '}
+            {t('b7')} <ReadMore locale={locale} />
           </p>
 
           <div className="mt-3 text-center">

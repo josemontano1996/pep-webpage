@@ -1,3 +1,4 @@
+'use client';
 import {
   MenubarItem,
   MenubarSub,
@@ -5,24 +6,28 @@ import {
   MenubarSubTrigger,
 } from '@/components/ui/menubar';
 import { SmoothScrollLink } from '@/components/SmoothScrollToIdElement';
+import { useTranslation } from 'react-i18next';
 
 const ClimateIndexMobile = () => {
+  const { t } = useTranslation();
   return (
     <>
       <MenubarSub>
-        <MenubarSubTrigger>Index</MenubarSubTrigger>
+        <MenubarSubTrigger>{t('index')}</MenubarSubTrigger>
         <MenubarSubContent>
           <MenubarItem>
-            <SmoothScrollLink scrollToId="objectives">Ziele</SmoothScrollLink>
+            <SmoothScrollLink scrollToId="objectives">
+              {t('ziele')}
+            </SmoothScrollLink>
           </MenubarItem>
           <MenubarItem>
             <SmoothScrollLink scrollToId="advantajes">
-              Projektvorteile
+              {t('positive-effects')}
             </SmoothScrollLink>
           </MenubarItem>
           <MenubarItem>
             <SmoothScrollLink scrollToId="planting">
-              Anpflanzung
+              {t('anpflanzung')}
             </SmoothScrollLink>
           </MenubarItem>
         </MenubarSubContent>
