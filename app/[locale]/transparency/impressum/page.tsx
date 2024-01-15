@@ -7,22 +7,23 @@ const page = () => {
       <section className="space-y-4">
         <div className="space-y-2">
           <h1 className="text-2xl">Angaben gemäß § 5 TMG</h1>
-          <p>
-            Informationsstelle {process.env.NEXT_PUBLIC_COMPANY_NAME}{' '}
+          <address>
+            PEP - Projekte für Entwicklungsförderung in Peru und Lateinamerika
+            e.V.
             <p>{process.env.NEXT_PUBLIC_PEP_STREET}</p>
             <p>
               {process.env.NEXT_PUBLIC_PEP_POSTAL}{' '}
               {process.env.NEXT_PUBLIC_PEP_CITY}
             </p>
-          </p>
+          </address>
           <h3 className="text-2xl">Vertreten durch:</h3>
           <p>Dr. Stefan Pappert, Ricardo Bueno.</p>
-          <h3 className="text-2xl">Contact:</h3>
+          <h3 className="text-2xl">Kontakt:</h3>
           <p>{process.env.NEXT_PUBLIC_PEP_EMAIL}</p>
           <h3 className="text-2xl">Registereintrag:</h3>
           <div>
             <p>Eintragung im Vereinsregister</p>
-            <p>Registergericht: {process.env.NEXT_PUBLIC_PEP_REGISTER_CITY}</p>
+            <p>Amtsgericht: {process.env.NEXT_PUBLIC_PEP_REGISTER_CITY}</p>
             <p>Registernummer: {process.env.NEXT_PUBLIC_PEP_REGISTER_NUMBER}</p>
           </div>
           <div>
