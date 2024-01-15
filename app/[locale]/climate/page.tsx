@@ -6,7 +6,7 @@ import mapPhoto from '@/public/imgs/map-cajamarca.jpg';
 import viveroPhoto from '@/public/imgs/vivero.jpg';
 import hoyacionPhoto from '@/public/imgs/hoyacion.jpg';
 import hoyacionPhoto2 from '@/public/imgs/hoyacion-2.jpg';
-import ventajasSociales from '@/public/imgs/ventajassociales.jpg';
+import socialPros from '@/public/imgs/meeting-1.jpg';
 import DonateCallToAction from '@/components/DonateCallToAction';
 
 interface Props {
@@ -112,7 +112,7 @@ const ClimatePage = () => {
             <div className="space-y-4 lg:col-span-6">
               <div className="col-span-6 lg:hidden">
                 <Image
-                  src={ventajasSociales}
+                  src={socialPros}
                   alt="Soziale Vorteile"
                   className="rounded-xl"
                 />
@@ -137,7 +137,7 @@ const ClimatePage = () => {
             </div>
             <div className="hidden lg:col-span-6 lg:block">
               <Image
-                src={ventajasSociales}
+                src={socialPros}
                 alt="Soziale Vorteile"
                 className="rounded-xl"
               />

@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { HeartPulse } from 'lucide-react';
 import LocaleLink from '../translations/LocaleLink';
 import { buttonVariants } from '../ui/button';
-import healthImg from '@/public/imgs/gesundheitmain.png';
+import healthImg from '@/public/imgs/health-1.png';
 
 const HealthHomeSection = () => {
   return (

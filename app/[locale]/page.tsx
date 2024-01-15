@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import initTranslations from '@/lib/i18n';
 
-import heroImage from '@/public/imgs/heroImg-min.webp';
+import heroImage from '@/public/imgs/heroImg.jpg';
 import sustainabilityImg from '@/public/imgs/sustainability-leaf.jpg';
 
 import MaxWidthWrapper from '@/components/Wrappers/MaxWidthWrapper';
@@ -36,7 +36,6 @@ export default async function HomePage({ params: { locale } }: Props) {
       <section className="relative h-[75vh]">
         <Image
           src={heroImage}
-          priority
           fill
           alt={'foto von unserem team in peru'}
           className="object-cover"

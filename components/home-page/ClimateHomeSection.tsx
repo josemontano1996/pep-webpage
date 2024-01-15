@@ -5,7 +5,7 @@ import React from 'react';
 import ReadMore from '../ReadMore';
 import LocaleLink from '../translations/LocaleLink';
 import { buttonVariants } from '../ui/button';
-import umweltImg from '@/public/imgs/umwelt2.jpg';
+import forestImg from '@/public/imgs/forest-1.png';
 
 const ClimateHomeSection = () => {
   return (
@@ -18,7 +18,7 @@ const ClimateHomeSection = () => {
       </div>
       <div className="gap-8 space-y-4 lg:flex lg:space-y-0">
         <div className="my-auto flex-1">
-          <Image src={umweltImg} alt={'Umwelt foto'} className="rounded-xl" />
+          <Image src={forestImg} alt={'Umwelt foto'} className="rounded-xl" />
         </div>
         <div className="flex flex-1 flex-col items-center justify-between space-y-4 sm:text-lg lg:text-left">
           <p>
